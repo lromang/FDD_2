@@ -1,0 +1,15 @@
+#! /bin/bash
+
+# ----------------------------------------
+# ls replicate
+# ========================================
+#
+# This script receives as its first argument
+# the directory from which the files
+# are to be printed. The default directory
+# is the current directory
+# ----------------------------------------
+
+print_dir="${1:`pwd`}"
+
+ls $print_dir

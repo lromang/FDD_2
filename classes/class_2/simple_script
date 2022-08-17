@@ -1,0 +1,8 @@
+#! /bin/bash
+
+# ----------------------------------------
+# This script exemplifies the use
+# of user variables within a script. 
+# ----------------------------------------
+
+echo "Hello $1, Good Bye $2"

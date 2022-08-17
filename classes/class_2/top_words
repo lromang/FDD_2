@@ -1,0 +1,24 @@
+#! /bin/bash
+
+# ----------------------------------------
+# Get top words
+# ========================================
+#
+# This script extracts the top most
+# common words in a given file.
+# IN
+# - file: the file from which the words
+#         are to be extracted.
+# - n_words: the number of top words to
+#            display.
+# - wl: the minimum length of a word to
+#       be considered.
+# OUT
+# - Top n_words in descending order. 
+# ----------------------------------------
+
+file="${1:-macbeth}"
+n_words="${2:-10}"
+wl="${3:-5}"
+
+cat "$file.txt" | grep -Eio "[a-z]{$wl,}" | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -nr | head -n "$n_words"

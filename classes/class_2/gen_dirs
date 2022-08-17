@@ -1,0 +1,23 @@
+#! /bin/bash
+
+# ----------------------------------------
+# Generates directories
+# ========================================
+#
+# This script generates a directory for
+# every letter in the alphabet and within
+# generates a directory with the name
+# of each team that begins with such letter. 
+# 
+# OUT
+# - Structure of directories as mentioned
+#   in the previous description. 
+# ----------------------------------------
+
+for letter in {a..z}
+do
+    mkdir $letter
+    for file in `ls ../../course_generals/teams  | grep -Ei "^$letter" | grep -Eo "^[^\.]+"`
+    do  mkdir "$letter/$file"
+    done 
+done
