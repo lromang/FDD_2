@@ -1,0 +1,15 @@
+#! /bin/bash
+
+
+arg_1="${1:-'Hola Mundo!'}"
+arg_2="${2:-'Adios Mundo!'}"
+
+# Lexic comp: >, <, ==, !=
+# Aritm comp: -eq, -ne, -gt, -lt
+
+if [[ $arg_1 == $arg_2 ]]
+then
+echo "The two strings are the same"
+else
+echo "The strings are different"
+fi

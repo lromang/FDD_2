@@ -1,0 +1,2 @@
+echo -e '0 this is line 1\n1 this is line 1\n2 this is line 2\n2 this is line 3\n3 this is line 4'  | gsed -E 
+'/^1.*1$/,/^2.*2$/s/line/\U&/g'

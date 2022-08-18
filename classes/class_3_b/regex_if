@@ -1,0 +1,13 @@
+#! /bin/bash
+
+arg_1="${1:-Hola Mundo!}"
+pattern="^H[a-zA-Z\ ]+!+$"
+
+echo $arg_1
+
+if [[ $arg_1 =~ $pattern ]]
+then
+echo "$arg_1 matches the given pattern"
+else
+echo "$arg_1 does not match the given pattern"
+fi

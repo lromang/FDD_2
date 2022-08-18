@@ -1,0 +1,12 @@
+#! /bin/bash
+
+arg_1="Hola MUNDO"
+arg_2="Hola mundo"
+
+# Linux use sed, mac gsed.
+if [[ $arg_1 == $(echo $arg_2 | gsed -E 's/mundo/\U&/g') ]]
+then
+echo 'The two strings are equal'
+else
+echo 'The strings are different'
+fi

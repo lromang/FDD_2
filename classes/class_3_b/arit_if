@@ -1,0 +1,16 @@
+#! /bin/bash
+
+arg_1="${1:-3}"
+arg_2="${2:-5}"
+
+# Basic if statment
+if [[ $arg_1 -gt $arg_2 ]]
+then
+echo "$arg_1 is greater than $arg_2"
+elif [[ $arg_1 -eq $arg_2 ]]
+then
+echo "$arg_1 equals $arg_2"
+else
+echo "$arg_2 is greater than $arg_1"
+fi
+

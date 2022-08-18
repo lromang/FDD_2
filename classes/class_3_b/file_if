@@ -1,0 +1,20 @@
+#! /bin/bash
+
+file_arg="${1:-test_file}"
+
+dir_arg="${2:-test_dir}"
+
+
+if [[ -f $file_arg ]]
+then
+echo "The file: $file_arg exists"
+else
+echo "The file: $file_arg does not exist"
+fi
+
+if [[ -d $dir_arg ]]
+then
+echo "The dir: $dir_arg exists"
+else
+echo "The dir: $dir_arg does not exsit"
+fi

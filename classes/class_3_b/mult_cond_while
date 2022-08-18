@@ -1,0 +1,10 @@
+#! /bin/bash
+
+echo "Please insert a number larger than 5 that is multiple of 3: "
+read numeric_arg
+
+while ([[ $numeric_arg -lt 5 ]] || (( $numeric_arg % 3 != 0 ))) && [[ ! -z $numeric_arg ]]
+do
+echo "$numeric_arg is smaller than 5. Please insert a number larger than 5: "
+read numeric_arg
+done
