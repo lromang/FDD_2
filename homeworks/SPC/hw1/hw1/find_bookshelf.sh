@@ -1,12 +1,14 @@
 #! /bin/bash
 
-id="${1: -0}"
-
-if grep -Fq "$1" links
-then
+read id
+while !(cat links | grep $id)
+do
+    echo "not found"
+    echo "these are the available bookshelfs: "
+    cat links
+    read id
+    
+done
 echo "succes"
-else
-echo "not found"
-echo "these are the available bookshelfs: "
-cat links
-fi
+
+
