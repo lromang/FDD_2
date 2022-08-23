@@ -1,0 +1,5 @@
+#! /bin/bash
+
+curl https://www.gutenberg.org/ebooks/bookshelf/ | grep -Eo "/ebooks/bookshelf/[0-9]+" | grep -Eo "[0-9]+" >urls
+sed -e 's/^/https:\/\/www.gutenberg.org\/ebooks\/bookshelf\//' -i urls
+ 
