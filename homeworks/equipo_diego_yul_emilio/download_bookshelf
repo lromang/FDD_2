@@ -1,0 +1,12 @@
+#! /bin/bash
+
+echo "Insert bookshelf id" 
+read book_id 
+while !(cat urls | grep "/$book_id$")
+do
+echo "no id found"
+cat urls 
+echo "enter another id"
+read book_id
+done
+echo "id found" 
