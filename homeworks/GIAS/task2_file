@@ -1,0 +1,14 @@
+#! /usr/bin/bash
+
+echo 'Dame un id para descargar'
+
+read id 
+
+while [[ 0 == $(grep "/$id\$" urls.txt -c) ]]
+do
+    cat urls.txt
+    echo 'Este id no existe, escriba uno correcto de los desplegados arriba, por favor'
+read id
+done
+echo 'success'
+
