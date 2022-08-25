@@ -1,0 +1,12 @@
+#! /bin/bash/
+
+echo "Ingresar el id para el bookshelf"
+read id_libreria
+while !(grep -xq "$id_libreria" unicamenteID.txt)
+do
+    echo "El ID no se ha encontrado"
+    cat urlcompleto.txt
+    echo "Ingrese un ID valido"
+    read id_libreria
+done
+echo "Success"
