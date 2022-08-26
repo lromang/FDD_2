@@ -1,0 +1,4 @@
+#! /bin/bash
+
+curl https://www.gutenberg.org/ebooks/bookshelf/ > archivoBookshelf
+grep -Eio  '/ebooks/bookshelf/[0-9]+' archivoBookshelf > linksBookshelf
