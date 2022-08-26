@@ -1,0 +1,5 @@
+#! /bin/bash
+
+curl --silent https://www.gutenberg.org/ebooks/bookshelf/ 2>&1 | grep -o '/ebooks/bookshelf/[0-9]\{1,\}' | sed -n '3,$p' > urlcompleto.txt
+
+cat urlcompleto.txt | grep -Eo "[0-9]+" | sort -n > unicamenteID.txt
