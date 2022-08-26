@@ -1,4 +1,4 @@
-#! /usr/bin/bash
+#! /bin/bash
 
 cat books.txt | grep -Eo '"/ebooks/bookshelf/[0-9]+'| sed -n 's$"$https://www.gutenberg.org$p' > urls.txt
 
