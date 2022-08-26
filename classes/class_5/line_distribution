@@ -1,0 +1,15 @@
+#! /bin/bash
+
+# ----------------------------------------
+# Line distribution
+# ========================================
+# This script gets the number of lines
+# that have a length (in fields)
+# larger than the average length of th e
+# lines in the file. 
+# ----------------------------------------
+
+file="${1:-test}"
+
+
+cat $file | awk '{print NF}' | sort | uniq -c | awk -v mean="$(cat $file  | awk 'BEGIN {tot_greater=0;all_lengths=0}; {all_lengths+=NF}; END {print all_lengths/NR}')" '$2 > mean {tot_greater+=$1}; END {print "there are " tot_greater " lines longer than the mean " mean}'
