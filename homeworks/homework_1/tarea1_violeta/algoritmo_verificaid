@@ -1,0 +1,18 @@
+#! /bin/bash
+
+echo 'Bienvenido a la tarea del equipo violeta'
+
+until [ "$dir_var" = "No" ]
+do
+        echo 'Por favor ingrese el id del libro:'
+        read dir_var
+        if grep -q "/ebooks/bookshelf/${dir_var}"  linksBookshelf
+        then
+                echo 'Éxito'
+                echo '¿Desea buscar otro id? [Si/No]'
+                read dir_var
+        else
+                echo 'El id del libro que buscas no existe, estos son los posibles:'
+                cat linksBookshelf
+        fi
+done

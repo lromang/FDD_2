@@ -1,0 +1,12 @@
+#! /bin/bash
+
+# ----------------------------------------
+# Random words
+# ========================================
+# This script extracts a random word
+# from each sentence in the input file
+# ----------------------------------------
+
+file="${1:-test}"
+
+cat $file | awk 'BEGIN {srand(); expand=100} {if (NF > 100) expand=1000; print $((rand()* expand) % NF + 1)}'
