@@ -1,0 +1,25 @@
+#! /bin/bash
+
+
+# ----------------------------------------
+# This script process a text stream with
+# the following rules:
+# -> if the line contains a letter:
+#     -> it's length (in number of fields) is even
+#        print the average character lenght
+#        of each word within the line.
+#    -> it's length (''') is odd
+#       print the length of the middle character.
+#
+# -> if the line is made of numbers (exclusively)
+#   print the mean.
+# -> EOC print ERROR
+#
+# ----------------------------------------
+
+echo 'this we flag\n23423 also this32423\n\n234234\n23423423\n234231sd' | awk '/.*[a-zA-Z].*/ {print "has a char somewhere: " $0}; /^[0-9 ]+$/ {print "this line is only numbers: " $0}'
+
+
+echo 'this is odd\nthis one is even\nthis is also even\nthis one odd' | awk '{if (!(NF % 2)) {print "even number of words: " $0} else if (! ( NF % 3)) {print "NF multiple of three"} else {print "odd number of words: " $0}}'
+
+echo 'this is a very simple line\nthis is also' | awk '{word_length=0; for(i=1; i <= NF; i++) word_length+=length($i); printf("Mean word length: %.2f\n", word_length/NF)}'

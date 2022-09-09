@@ -1,0 +1,12 @@
+
+
+# Removes duplicates from a sorted stream
+echo 'this is a duplicated line\nthis is a duplicated line\n\n111\n\nthis is a duplicated line\n\n\n111' | awk '!/^$/ {if (prev != $0) print $0; prev=$0}'
+
+# Removes duplicates in general (student solution...very elegant)
+echo 'this is a duplicated line\nthis is a duplicated line\n\n111\n\nthis is a duplicated line\n\n\n111' | awk '!/^$/ {if (! ($0 in lines) ) print $0; lines[$0]}'
+
+# Gets the number of times a line appears in a stream
+echo 'this is alsoa a unique line\nthis is a unique line\n111\nthis line\nthis line\n\n\nthis line\n111\n111\n3\n\n\n3\nthis line' | awk '!/^$/ {all_lines[$0]+=1} END {for (line in all_lines) if (all_lines[line] == 1) print line}'
+
+

@@ -1,0 +1,16 @@
+# ----------------------------------------
+# Question parser 
+# ========================================
+#
+# This script extracts the href
+# and title of hot topic questions
+# on https://stackexchange.com/
+# ----------------------------------------
+
+/.*question-list.*/,/.*page-sizer float-right.*/{
+/.*question-link.*/{
+s/.*href=\"([^\"]+)\".*/\1/g
+N
+p
+}
+}

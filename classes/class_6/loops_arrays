@@ -1,0 +1,5 @@
+
+# Counts all words in stream
+echo '\nthis line\nthis line\n\n\nthis line\n111\n111\n3\n\n\n3'  | awk '!/^$/ {for (i = 1; i <= NF; i++) all_words[$i] += 1} END {for (word in all_words) printf("word: %s | occurrences: %d\n", word, all_words[word])}'
+
+
