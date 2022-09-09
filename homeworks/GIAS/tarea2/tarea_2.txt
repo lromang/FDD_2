@@ -1,0 +1,16 @@
+  198  brew services start postgresql
+  199  psql postgres
+  200  brew services start postgresql
+  201  brew services enable postgresql
+  202  brew install postgres
+  203  brew services start postgresql
+  204  brew upgrade postgres
+  205  brew install postgresql
+  206  brew services start postgresql
+  207  psql postgres
+  208  psql -d testdb  -c 'SELECT * from test'
+  209  psql postgres
+  210  history
+  211  ls
+  212  cd Desktop
+  213  ls
