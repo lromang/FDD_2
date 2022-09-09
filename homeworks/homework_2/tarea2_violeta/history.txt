@@ -1,0 +1,13 @@
+CREATE USER dianamunnoz WITH ENCRYPTED PASSWORD '';
+ALTER USER dianamunnoz WITH SUPERUSER;
+\du
+create database violeta owner dianamunnoz;
+grant all privileges on database violeta to dianamunnoz;
+\l
+\c violeta
+set role dianamunnoz;
+create table test (id serial primary key, name varchar(25));
+\dt
+insert into test values (1, 'this is a test');
+SELECT * from test;
+\s history.tx
