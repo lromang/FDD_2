@@ -1,0 +1,30 @@
+create role diego with login password 'diego';
+\du
+create database FDD owner diego;
+\dt
+\l
+\c fdd
+grant all privileges on database fdd to diego;
+create table test (name varchar(25), age integer);
+\l
+\dt
+\du
+ Role name |                         Attributes                         | Member of
+-----------+------------------------------------------------------------+-----------
+ diego     |                                                            | {}
+ postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS | {}
+insert into test values('Diego', 21);
+insert into test values('Aldo', 20);
+\dt
+        List of relations
+ Schema | Name | Type  |  Owner
+--------+------+-------+----------
+ public | test | table | postgres
+\q
+psql -d fdd -c 'SELECT * from test';
+
+ name  | age
+-------+-----
+ Diego |  21
+ Aldo  |  20
+(2 rows)
