@@ -20,4 +20,4 @@ then
     curl https://stackexchange.com/ > stack_exchange.txt
 fi
 
-gsed -nEf q_parser stack_exchange.txt | tr '\n' ',' > $output_file
+sed -nEf q_parser stack_exchange.txt | tr '\n' ',' > $output_file
