@@ -1,0 +1,22 @@
+#! /bin/bash
+
+# Sample size (defaults 500)
+n_random=${1:-500}
+percentiles=${1:-10}
+
+# Drop table
+psql -d fdd2db -c 'drop table if exists random_test'
+# Create table
+psql -d fdd2db -c 'create table random_test (r_value integer)'
+# Populate table
+for i in $(seq $n_random)
+do
+query=$(echo $i | awk -v seed=$i -v query_state="insert into random_test values (%d)" "BEGIN {srand(seed)} {printf(query_state, int(rand()*100) + 1)}")
+echo $query
+psql -d fdd2db -c "$query"
+# TODO: extract deciles
+echo "Quantiles"
+# echo 1 | awk '{for(i = 1; i <= 10; i++) query=query "percentile_cont(" i/10 ") as percentile_" i ", " }; END {print query}'
+# psql -d fdd2db -c 'select percentile_cont(.1) as percentile_1 within group (order by r_value) from random_test'
+done
+
