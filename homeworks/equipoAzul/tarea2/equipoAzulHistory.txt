@@ -1,0 +1,12 @@
+create role emiliogonzalezluna with login password '0000';
+\du
+create database fdd2db owner postgres;
+grant all privileges on database fdd2db to emiliogonzalezluna;
+\l
+\c fdd2db
+set role emiliogonzalezluna;
+select current_role;
+grant all privileges on all tables in schema public to emiliogonzalezluna;
+create table test (id serial primary key, name varchar(25));
+\dt
+insert into test values (1, 'this is a test');
