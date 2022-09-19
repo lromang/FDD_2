@@ -14,7 +14,7 @@ user=${2:-$(whoami)}
 
 # GLOBAL
 N_PROGRAMS=20
-N_STUDENTS=100
+N_STUDENTS=1000
 
 echo "Working with database: $database | user: $user"
 
