@@ -2,7 +2,7 @@
 
 # ----------------------------------------
 # This script creates and populates
-# the following tables.
+# the following tables. 
 # -> universities
 # -> programs
 # -> students
@@ -14,7 +14,7 @@ user=${2:-$(whoami)}
 
 # GLOBAL
 N_PROGRAMS=20
-N_STUDENTS=100000
+N_STUDENTS=100
 
 echo "Working with database: $database | user: $user"
 
@@ -39,9 +39,35 @@ psql -d fdd2db -c "create table if not exists universities (id serial primary ke
 # -> create table programs
 echo "Creating table programs"
 psql -d fdd2db -c "create table if not exists programs (id serial primary key, university integer references universities(id), name varchar(25), tuition float)"
-# -> create table students
-# TODO
-# -> create table students with the structure
-#    (id, name, age, program)
-#    make sure to use the correct
-#    datatypes.
+# -> create table students 
+
+echo "Creating table students"
+psql -d fdd2db -c 'create table if not exists students (id serial primary key, name varchar(50), age integer, program integer references programs(id))'
+ 
+# ----------------------------------------
+# Populate tables
+# ----------------------------------------
+# -> populate universities
+echo "Populating table universities"
+psql -d fdd2db -c "\copy universities from 'universities.csv' delimiter ','"
+# -> populate programs
+echo "Populating table programs"
+echo $N_PROGRAMS
+for i in $(seq $N_PROGRAMS)
+do
+    echo $i
+    # Make sure program is interpreted as string.
+    name="'""program_$i""'"
+    psql -d fdd2db -c "insert into programs values ($i, $(((RANDOM % 4) + 1)), $name, $((RANDOM * 10)))"
+done
+
+for i in $(seq $N_STUDENTS);
+do 
+	letters=$(for letter in {a..z}; do echo $letter; done | tr '\n' ' '); numbers=$(for number in {18..35}; do echo $number; done | tr '\n' ' ');
+	query=$(echo $i | awk -v letters="$letters" -v v_index="$i" -v numbers="$numbers" "BEGIN  {srand(v_index)}; {split(letters,list_letters); 
+	split(numbers, list_numbers); for(i = 0; i < 5 + (rand()*100 % 5); i++) r_word = r_word list_letters[int(rand()*length(list_letters)) + 1]; 
+	r_age = list_numbers[int(rand()*length(list_numbers)) + 1]; 
+	printf( \"insert into students values(%d, '%s', %d, %d)\", v_index, r_word, r_age, r_age % 20 + 1)}");
+	psql -d fdd2db -c "$query";
+done
+
