@@ -1,0 +1,49 @@
+psql postgres
+create role sammyboy86
+psql create role sammyboy86
+sudo service postgresql start
+psql postgres
+sudo -u postgres -i
+sudo service postgresql start
+psql postgres
+sudo -u postgres -i
+sudo service postgresql strat
+sudo service postgresql start
+psql -u postgres -i
+sudo -u postgres -i
+sudo -u sammyboy86 -i
+psql start
+psql postgres
+psql mydb
+sudo -u postgres -i
+sudo service postgresql start
+sudo -u postgres -i
+sudo service postgresql start
+sudo -u postgres createuser -e sammyboy86
+sudo -i sammyboy86 -u
+sudo -u sammyboy86 psql
+sudo -u sammyboy86
+sudo -u postgres createdb sammyboy86
+psql
+create database testdb owner sammyboy86
+psql postgres
+sudo -u postgres
+\q
+psql postgres
+create database testdb owner sammyboy86
+\l
+\q
+create database testdb
+\l
+grant all privileges on testdb to user sammyboy86
+\l
+\q
+\s
+
+testdb=# select * from test;
+ id |      name      
+----+----------------
+  1 | this is a test
+(1 row)
+
+
