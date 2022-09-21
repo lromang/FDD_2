@@ -1,0 +1,11 @@
+#! /bin/bash
+
+echo 'Escribe un stream de texto (números o letras)'
+read  stream
+
+echo $stream | awk '/.*[a-zA-Z].*/ {
+     if (!(NF % 2)) {
+     	word_length=0; for(i=1; i<=NF; i++) word_length+=length($i); print "Promedio de caracteres de cada palabra en la linea: " word_length/NF;}
+	else
+		print "Longitud del field de en medio: " length($(int(NF/2) + 1))}
+		/[0-9 ]+$/ {sum = 0; for (i = 1; i <= NF; i++) sum += $i; sum /= NF; print sum} /[\w]/ { print "EOC"}'
