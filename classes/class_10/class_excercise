@@ -1,0 +1,17 @@
+#! /bin/bash
+
+## --------------------------------------------------
+## Generate a csv file with the following structure
+##  timezone, time_now
+##
+## Use AWK, PSQL, SED and GREP.
+## 
+## HINT:
+## -> select * from pg_timezone_names; # Shows all the timezones
+## -> set timezone timezone; # sets timezone
+##                             to a specific timezone.
+## -> show timezone; # shows timezone
+## -> select now(); # shows time right now.
+## --------------------------------------------------
+
+psql -d fdd2db -c 'select * from pg_timezone_names' | grep -iE '^ [a-z]+' | awk -F '\|' -v query="set timezone to '%s';show timezone;select now();\n" '{printf(query, $1)}' | gsed -E "s/' +([^ ]+) +'/'\1'/g" | gsed -E 's/;/;\n/g' | psql -d fdd2db | awk '/^-+$/ {getline; print $0}' | awk '{line=$0;getline; print line "," $0}' > world_clock.csv
