@@ -1,0 +1,3 @@
+select title, r_num, list_genres, case when array_length(list_genres, 1) > 1 then list_genres[r_num] else list_genres[1] end from (select title, 
+floor(random()*array_length(list_genres, 1)) + 1 as r_num, list_genres from (select * from (select title, regexp_matches(title, '(\([^\)]+\) )+[^$]') as 
+foreign_tit, regexp_split_to_array(genres, '\|') list_genres from movies) as sbq1 where foreign_tit is not null) as sbq2) as sbq3 limit 15;
