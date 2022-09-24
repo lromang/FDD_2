@@ -1,0 +1,39 @@
+#! /bin/bash
+#Juan Pablo García
+# Emilio Gonzalez Luna
+#Juan Manuel Ambriz
+# Sample size (defaults 500)
+n_random=${1:-500}
+percentiles=${1:-10}
+
+# Drop table
+psql -d db1 -c 'drop table if exists random_test'
+# Create table
+psql -d db1 -c 'create table random_test (r_value integer)'
+# Populate table
+for i in $(seq $n_random)
+do
+query=$(echo $i | awk -v seed=$i -v query_state="insert into random_test values (%d)" "BEGIN {srand(seed)} {printf(query_state, int(rand()*100) + 1)}")
+#echo $query
+psql -d db1 -c "$query"
+# TODO: extract deciles
+#echo "Quantiles"
+#echo 1 | awk '{for(i = 1; i <= 10; i++) query=query "percentile_cont(" i/10 ") as percentile_" i ", " }; END {print query}'
+#psql -d db1 -c 'select percentile_cont(.1) within group (order by r_value) as percentil_1 from random_test'
+
+echo "Deciles"
+
+psql -d db1 -c 'select 
+percentile_cont(0.1) within group (order by r_value) as decil_1, 
+percentile_cont(0.2) within group (order by r_value) as decil_2,
+percentile_cont(0.3) within group (order by r_value) as decil_3, 
+percentile_cont(0.4) within group (order by r_value) as decil_4, 
+percentile_cont(0.5) within group (order by r_value) as decil_5, 
+percentile_cont(0.6) within group (order by r_value) as decil_6, 
+percentile_cont(0.7) within group (order by r_value) as decil_7, 
+percentile_cont(0.8) within group (order by r_value) as decil_8, 
+percentile_cont(0.9) within group (order by r_value) as decil_9, 
+percentile_cont(1.0) within group (order by r_value) as decil_10
+from random_test'
+
+done
