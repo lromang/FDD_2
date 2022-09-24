@@ -1,0 +1,28 @@
+#! /bin/bash
+
+movie_path="${1:-../../Professor/notes/sql/col_functions_n_filters/movies}"
+margin="${2:-10}"
+
+psql -d fdd2db -c 'drop table if exists movies cascade'
+psql -d fdd2db -c 'drop table if exists ratings cascade'
+
+# Extract max title and max genres
+
+max_vals=$(cat "$movie_path/movies.csv" | awk -F '\t' '{max_title=(max_title < length($2)) ? length($2) : max_title; max_genre=(max_genre < length($3)) ? length($3) : max_genre}; END {print max_title " " max_genre}')
+
+max_title=$(echo $max_vals | awk '{print $1}')
+max_genres=$(echo $max_vals | awk '{print $2}')
+
+echo "Max vals: $max_title $max_genres"
+# Create movies
+psql -d fdd2db -c "create table movies (id serial primary key, title varchar($(($max_title+$margin))), genres varchar($(($max_genres+$margin))))"
+# Create ratings
+psql -d fdd2db -c "create table ratings (user_id integer, movie_id integer references movies(id), rating float, date timestamp)"
+
+# Populate movies
+psql -d fdd2db -c "\copy movies from $movie_path/movies.csv delimiter '	' header csv"
+# Populate ratings
+psql -d fdd2db -c "\copy ratings from $movie_path/ratings.csv delimiter '	' header csv"
+
+
+
