@@ -1,0 +1,2380 @@
+set timezone to 'Indian/Mauritius';
+show timezone;
+select now();
+
+set timezone to 'Indian/Chagos';
+show timezone;
+select now();
+
+set timezone to 'Indian/Mayotte';
+show timezone;
+select now();
+
+set timezone to 'Indian/Christmas';
+show timezone;
+select now();
+
+set timezone to 'Indian/Cocos';
+show timezone;
+select now();
+
+set timezone to 'Indian/Maldives';
+show timezone;
+select now();
+
+set timezone to 'Indian/Comoro';
+show timezone;
+select now();
+
+set timezone to 'Indian/Reunion';
+show timezone;
+select now();
+
+set timezone to 'Indian/Mahe';
+show timezone;
+select now();
+
+set timezone to 'Indian/Kerguelen';
+show timezone;
+select now();
+
+set timezone to 'Indian/Antananarivo';
+show timezone;
+select now();
+
+set timezone to 'Atlantic/Faroe';
+show timezone;
+select now();
+
+set timezone to 'Atlantic/Canary';
+show timezone;
+select now();
+
+set timezone to 'Atlantic/Stanley';
+show timezone;
+select now();
+
+set timezone to 'Atlantic/Bermuda';
+show timezone;
+select now();
+
+set timezone to 'Atlantic/South_Georgia';
+show timezone;
+select now();
+
+set timezone to 'Atlantic/St_Helena';
+show timezone;
+select now();
+
+set timezone to 'Atlantic/Jan_Mayen';
+show timezone;
+select now();
+
+set timezone to 'Atlantic/Faeroe';
+show timezone;
+select now();
+
+set timezone to 'Atlantic/Reykjavik';
+show timezone;
+select now();
+
+set timezone to 'Atlantic/Cape_Verde';
+show timezone;
+select now();
+
+set timezone to 'Atlantic/Azores';
+show timezone;
+select now();
+
+set timezone to 'Atlantic/Madeira';
+show timezone;
+select now();
+
+set timezone to 'CST6CDT';
+show timezone;
+select now();
+
+set timezone to 'Poland';
+show timezone;
+select now();
+
+set timezone to 'US/Alaska';
+show timezone;
+select now();
+
+set timezone to 'US/Pacific';
+show timezone;
+select now();
+
+set timezone to 'US/Eastern';
+show timezone;
+select now();
+
+set timezone to 'US/Michigan';
+show timezone;
+select now();
+
+set timezone to 'US/Arizona';
+show timezone;
+select now();
+
+set timezone to 'US/Indiana-Starke';
+show timezone;
+select now();
+
+set timezone to 'US/Aleutian';
+show timezone;
+select now();
+
+set timezone to 'US/Hawaii';
+show timezone;
+select now();
+
+set timezone to 'US/East-Indiana';
+show timezone;
+select now();
+
+set timezone to 'US/Central';
+show timezone;
+select now();
+
+set timezone to 'US/Mountain';
+show timezone;
+select now();
+
+set timezone to 'US/Samoa';
+show timezone;
+select now();
+
+set timezone to 'Kwajalein';
+show timezone;
+select now();
+
+set timezone to 'Brazil/DeNoronha';
+show timezone;
+select now();
+
+set timezone to 'Brazil/Acre';
+show timezone;
+select now();
+
+set timezone to 'Brazil/East';
+show timezone;
+select now();
+
+set timezone to 'Brazil/West';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Port_Moresby';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Chuuk';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Easter';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Kwajalein';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Tongatapu';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Yap';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Wallis';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Apia';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Norfolk';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Efate';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Fiji';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Funafuti';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Palau';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Guam';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Saipan';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Kosrae';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Niue';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Ponape';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Wake';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Galapagos';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Johnston';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Midway';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Nauru';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Guadalcanal';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Chatham';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Auckland';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Noumea';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Fakaofo';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Tahiti';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Gambier';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Majuro';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Honolulu';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Pohnpei';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Pago_Pago';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Truk';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Pitcairn';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Marquesas';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Kanton';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Bougainville';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Tarawa';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Rarotonga';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Samoa';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Kiritimati';
+show timezone;
+select now();
+
+set timezone to 'Pacific/Enderbury';
+show timezone;
+select now();
+
+set timezone to 'MST';
+show timezone;
+select now();
+
+set timezone to 'NZ';
+show timezone;
+select now();
+
+set timezone to 'Arctic/Longyearbyen';
+show timezone;
+select now();
+
+set timezone to 'Universal';
+show timezone;
+select now();
+
+set timezone to 'Libya';
+show timezone;
+select now();
+
+set timezone to 'Turkey';
+show timezone;
+select now();
+
+set timezone to 'EST5EDT';
+show timezone;
+select now();
+
+set timezone to 'Greenwich';
+show timezone;
+select now();
+
+set timezone to 'America/Puerto_Rico';
+show timezone;
+select now();
+
+set timezone to 'America/Recife';
+show timezone;
+select now();
+
+set timezone to 'America/Resolute';
+show timezone;
+select now();
+
+set timezone to 'America/Manaus';
+show timezone;
+select now();
+
+set timezone to 'America/New_York';
+show timezone;
+select now();
+
+set timezone to 'America/Rankin_Inlet';
+show timezone;
+select now();
+
+set timezone to 'America/Lima';
+show timezone;
+select now();
+
+set timezone to 'America/St_Barthelemy';
+show timezone;
+select now();
+
+set timezone to 'America/Santo_Domingo';
+show timezone;
+select now();
+
+set timezone to 'America/Detroit';
+show timezone;
+select now();
+
+set timezone to 'America/Paramaribo';
+show timezone;
+select now();
+
+set timezone to 'America/Yakutat';
+show timezone;
+select now();
+
+set timezone to 'America/Santarem';
+show timezone;
+select now();
+
+set timezone to 'America/Punta_Arenas';
+show timezone;
+select now();
+
+set timezone to 'America/Scoresbysund';
+show timezone;
+select now();
+
+set timezone to 'America/Santiago';
+show timezone;
+select now();
+
+set timezone to 'America/Guyana';
+show timezone;
+select now();
+
+set timezone to 'America/Coral_Harbour';
+show timezone;
+select now();
+
+set timezone to 'America/Rio_Branco';
+show timezone;
+select now();
+
+set timezone to 'America/Porto_Acre';
+show timezone;
+select now();
+
+set timezone to 'America/Nipigon';
+show timezone;
+select now();
+
+set timezone to 'America/Edmonton';
+show timezone;
+select now();
+
+set timezone to 'America/Port_of_Spain';
+show timezone;
+select now();
+
+set timezone to 'America/Lower_Princes';
+show timezone;
+select now();
+
+set timezone to 'America/St_Thomas';
+show timezone;
+select now();
+
+set timezone to 'America/Guatemala';
+show timezone;
+select now();
+
+set timezone to 'America/Catamarca';
+show timezone;
+select now();
+
+set timezone to 'America/Antigua';
+show timezone;
+select now();
+
+set timezone to 'America/Porto_Velho';
+show timezone;
+select now();
+
+set timezone to 'America/Rosario';
+show timezone;
+select now();
+
+set timezone to 'America/Chicago';
+show timezone;
+select now();
+
+set timezone to 'America/Creston';
+show timezone;
+select now();
+
+set timezone to 'America/Managua';
+show timezone;
+select now();
+
+set timezone to 'America/Nassau';
+show timezone;
+select now();
+
+set timezone to 'America/Bogota';
+show timezone;
+select now();
+
+set timezone to 'America/Cancun';
+show timezone;
+select now();
+
+set timezone to 'America/Chihuahua';
+show timezone;
+select now();
+
+set timezone to 'America/Campo_Grande';
+show timezone;
+select now();
+
+set timezone to 'America/Halifax';
+show timezone;
+select now();
+
+set timezone to 'America/Boise';
+show timezone;
+select now();
+
+set timezone to 'America/Montreal';
+show timezone;
+select now();
+
+set timezone to 'America/Goose_Bay';
+show timezone;
+select now();
+
+set timezone to 'America/Sao_Paulo';
+show timezone;
+select now();
+
+set timezone to 'America/Blanc-Sablon';
+show timezone;
+select now();
+
+set timezone to 'America/Phoenix';
+show timezone;
+select now();
+
+set timezone to 'America/Atikokan';
+show timezone;
+select now();
+
+set timezone to 'America/Cayenne';
+show timezone;
+select now();
+
+set timezone to 'America/Nuuk';
+show timezone;
+select now();
+
+set timezone to 'America/Santa_Isabel';
+show timezone;
+select now();
+
+set timezone to 'America/Boa_Vista';
+show timezone;
+select now();
+
+set timezone to 'America/Bahia_Banderas';
+show timezone;
+select now();
+
+set timezone to 'America/Indiana/Vevay';
+show timezone;
+select now();
+
+set timezone to 'America/Indiana/Indianapolis';
+show timezone;
+select now();
+
+set timezone to 'America/Indiana/Winamac';
+show timezone;
+select now();
+
+set timezone to 'America/Indiana/Tell_City';
+show timezone;
+select now();
+
+set timezone to 'America/Indiana/Petersburg';
+show timezone;
+select now();
+
+set timezone to 'America/Indiana/Vincennes';
+show timezone;
+select now();
+
+set timezone to 'America/Indiana/Knox';
+show timezone;
+select now();
+
+set timezone to 'America/Indiana/Marengo';
+show timezone;
+select now();
+
+set timezone to 'America/Indianapolis';
+show timezone;
+select now();
+
+set timezone to 'America/Dominica';
+show timezone;
+select now();
+
+set timezone to 'America/Argentina/Salta';
+show timezone;
+select now();
+
+set timezone to 'America/Argentina/Ushuaia';
+show timezone;
+select now();
+
+set timezone to 'America/Argentina/Catamarca';
+show timezone;
+select now();
+
+set timezone to 'America/Argentina/ComodRivadavia';
+show timezone;
+select now();
+
+set timezone to 'America/Argentina/San_Juan';
+show timezone;
+select now();
+
+set timezone to 'America/Argentina/San_Luis';
+show timezone;
+select now();
+
+set timezone to 'America/Argentina/Rio_Gallegos';
+show timezone;
+select now();
+
+set timezone to 'America/Argentina/Jujuy';
+show timezone;
+select now();
+
+set timezone to 'America/Argentina/Tucuman';
+show timezone;
+select now();
+
+set timezone to 'America/Argentina/Buenos_Aires';
+show timezone;
+select now();
+
+set timezone to 'America/Argentina/Cordoba';
+show timezone;
+select now();
+
+set timezone to 'America/Argentina/La_Rioja';
+show timezone;
+select now();
+
+set timezone to 'America/Argentina/Mendoza';
+show timezone;
+select now();
+
+set timezone to 'America/La_Paz';
+show timezone;
+select now();
+
+set timezone to 'America/Dawson';
+show timezone;
+select now();
+
+set timezone to 'America/Moncton';
+show timezone;
+select now();
+
+set timezone to 'America/Matamoros';
+show timezone;
+select now();
+
+set timezone to 'America/St_Vincent';
+show timezone;
+select now();
+
+set timezone to 'America/Regina';
+show timezone;
+select now();
+
+set timezone to 'America/Yellowknife';
+show timezone;
+select now();
+
+set timezone to 'America/Rainy_River';
+show timezone;
+select now();
+
+set timezone to 'America/Kralendijk';
+show timezone;
+select now();
+
+set timezone to 'America/Monterrey';
+show timezone;
+select now();
+
+set timezone to 'America/Jamaica';
+show timezone;
+select now();
+
+set timezone to 'America/Havana';
+show timezone;
+select now();
+
+set timezone to 'America/Tegucigalpa';
+show timezone;
+select now();
+
+set timezone to 'America/Guayaquil';
+show timezone;
+select now();
+
+set timezone to 'America/Metlakatla';
+show timezone;
+select now();
+
+set timezone to 'America/Mazatlan';
+show timezone;
+select now();
+
+set timezone to 'America/Belize';
+show timezone;
+select now();
+
+set timezone to 'America/Knox_IN';
+show timezone;
+select now();
+
+set timezone to 'America/Cuiaba';
+show timezone;
+select now();
+
+set timezone to 'America/Merida';
+show timezone;
+select now();
+
+set timezone to 'America/Jujuy';
+show timezone;
+select now();
+
+set timezone to 'America/Cayman';
+show timezone;
+select now();
+
+set timezone to 'America/Belem';
+show timezone;
+select now();
+
+set timezone to 'America/Eirunepe';
+show timezone;
+select now();
+
+set timezone to 'America/St_Lucia';
+show timezone;
+select now();
+
+set timezone to 'America/Bahia';
+show timezone;
+select now();
+
+set timezone to 'America/Whitehorse';
+show timezone;
+select now();
+
+set timezone to 'America/Tortola';
+show timezone;
+select now();
+
+set timezone to 'America/Vancouver';
+show timezone;
+select now();
+
+set timezone to 'America/Inuvik';
+show timezone;
+select now();
+
+set timezone to 'America/Port-au-Prince';
+show timezone;
+select now();
+
+set timezone to 'America/Fortaleza';
+show timezone;
+select now();
+
+set timezone to 'America/Noronha';
+show timezone;
+select now();
+
+set timezone to 'America/Buenos_Aires';
+show timezone;
+select now();
+
+set timezone to 'America/Los_Angeles';
+show timezone;
+select now();
+
+set timezone to 'America/El_Salvador';
+show timezone;
+select now();
+
+set timezone to 'America/Denver';
+show timezone;
+select now();
+
+set timezone to 'America/Fort_Wayne';
+show timezone;
+select now();
+
+set timezone to 'America/Kentucky/Louisville';
+show timezone;
+select now();
+
+set timezone to 'America/Kentucky/Monticello';
+show timezone;
+select now();
+
+set timezone to 'America/North_Dakota/New_Salem';
+show timezone;
+select now();
+
+set timezone to 'America/North_Dakota/Center';
+show timezone;
+select now();
+
+set timezone to 'America/North_Dakota/Beulah';
+show timezone;
+select now();
+
+set timezone to 'America/Glace_Bay';
+show timezone;
+select now();
+
+set timezone to 'America/Montserrat';
+show timezone;
+select now();
+
+set timezone to 'America/Toronto';
+show timezone;
+select now();
+
+set timezone to 'America/Panama';
+show timezone;
+select now();
+
+set timezone to 'America/Cordoba';
+show timezone;
+select now();
+
+set timezone to 'America/Louisville';
+show timezone;
+select now();
+
+set timezone to 'America/Ensenada';
+show timezone;
+select now();
+
+set timezone to 'America/Shiprock';
+show timezone;
+select now();
+
+set timezone to 'America/Ojinaga';
+show timezone;
+select now();
+
+set timezone to 'America/Thule';
+show timezone;
+select now();
+
+set timezone to 'America/Caracas';
+show timezone;
+select now();
+
+set timezone to 'America/Araguaina';
+show timezone;
+select now();
+
+set timezone to 'America/Cambridge_Bay';
+show timezone;
+select now();
+
+set timezone to 'America/Winnipeg';
+show timezone;
+select now();
+
+set timezone to 'America/Grand_Turk';
+show timezone;
+select now();
+
+set timezone to 'America/Virgin';
+show timezone;
+select now();
+
+set timezone to 'America/Anchorage';
+show timezone;
+select now();
+
+set timezone to 'America/Costa_Rica';
+show timezone;
+select now();
+
+set timezone to 'America/Nome';
+show timezone;
+select now();
+
+set timezone to 'America/Grenada';
+show timezone;
+select now();
+
+set timezone to 'America/St_Johns';
+show timezone;
+select now();
+
+set timezone to 'America/Atka';
+show timezone;
+select now();
+
+set timezone to 'America/Asuncion';
+show timezone;
+select now();
+
+set timezone to 'America/Hermosillo';
+show timezone;
+select now();
+
+set timezone to 'America/Tijuana';
+show timezone;
+select now();
+
+set timezone to 'America/Marigot';
+show timezone;
+select now();
+
+set timezone to 'America/Juneau';
+show timezone;
+select now();
+
+set timezone to 'America/Montevideo';
+show timezone;
+select now();
+
+set timezone to 'America/Godthab';
+show timezone;
+select now();
+
+set timezone to 'America/Guadeloupe';
+show timezone;
+select now();
+
+set timezone to 'America/Maceio';
+show timezone;
+select now();
+
+set timezone to 'America/Pangnirtung';
+show timezone;
+select now();
+
+set timezone to 'America/St_Kitts';
+show timezone;
+select now();
+
+set timezone to 'America/Barbados';
+show timezone;
+select now();
+
+set timezone to 'America/Iqaluit';
+show timezone;
+select now();
+
+set timezone to 'America/Menominee';
+show timezone;
+select now();
+
+set timezone to 'America/Martinique';
+show timezone;
+select now();
+
+set timezone to 'America/Mexico_City';
+show timezone;
+select now();
+
+set timezone to 'America/Swift_Current';
+show timezone;
+select now();
+
+set timezone to 'America/Miquelon';
+show timezone;
+select now();
+
+set timezone to 'America/Curacao';
+show timezone;
+select now();
+
+set timezone to 'America/Dawson_Creek';
+show timezone;
+select now();
+
+set timezone to 'America/Mendoza';
+show timezone;
+select now();
+
+set timezone to 'America/Adak';
+show timezone;
+select now();
+
+set timezone to 'America/Thunder_Bay';
+show timezone;
+select now();
+
+set timezone to 'America/Aruba';
+show timezone;
+select now();
+
+set timezone to 'America/Fort_Nelson';
+show timezone;
+select now();
+
+set timezone to 'America/Sitka';
+show timezone;
+select now();
+
+set timezone to 'America/Anguilla';
+show timezone;
+select now();
+
+set timezone to 'America/Danmarkshavn';
+show timezone;
+select now();
+
+set timezone to 'Australia/Melbourne';
+show timezone;
+select now();
+
+set timezone to 'Australia/Queensland';
+show timezone;
+select now();
+
+set timezone to 'Australia/North';
+show timezone;
+select now();
+
+set timezone to 'Australia/Lord_Howe';
+show timezone;
+select now();
+
+set timezone to 'Australia/Adelaide';
+show timezone;
+select now();
+
+set timezone to 'Australia/Yancowinna';
+show timezone;
+select now();
+
+set timezone to 'Australia/Victoria';
+show timezone;
+select now();
+
+set timezone to 'Australia/Canberra';
+show timezone;
+select now();
+
+set timezone to 'Australia/Sydney';
+show timezone;
+select now();
+
+set timezone to 'Australia/ACT';
+show timezone;
+select now();
+
+set timezone to 'Australia/Eucla';
+show timezone;
+select now();
+
+set timezone to 'Australia/Brisbane';
+show timezone;
+select now();
+
+set timezone to 'Australia/Tasmania';
+show timezone;
+select now();
+
+set timezone to 'Australia/Hobart';
+show timezone;
+select now();
+
+set timezone to 'Australia/Perth';
+show timezone;
+select now();
+
+set timezone to 'Australia/South';
+show timezone;
+select now();
+
+set timezone to 'Australia/Lindeman';
+show timezone;
+select now();
+
+set timezone to 'Australia/Darwin';
+show timezone;
+select now();
+
+set timezone to 'Australia/West';
+show timezone;
+select now();
+
+set timezone to 'Australia/LHI';
+show timezone;
+select now();
+
+set timezone to 'Australia/NSW';
+show timezone;
+select now();
+
+set timezone to 'Australia/Broken_Hill';
+show timezone;
+select now();
+
+set timezone to 'Australia/Currie';
+show timezone;
+select now();
+
+set timezone to 'Etc/GMT-10';
+show timezone;
+select now();
+
+set timezone to 'Etc/GMT+12';
+show timezone;
+select now();
+
+set timezone to 'Etc/GMT-11';
+show timezone;
+select now();
+
+set timezone to 'Etc/Universal';
+show timezone;
+select now();
+
+set timezone to 'Etc/Greenwich';
+show timezone;
+select now();
+
+set timezone to 'Etc/GMT-6';
+show timezone;
+select now();
+
+set timezone to 'Etc/GMT-1';
+show timezone;
+select now();
+
+set timezone to 'Etc/GMT-8';
+show timezone;
+select now();
+
+set timezone to 'Etc/GMT+4';
+show timezone;
+select now();
+
+set timezone to 'Etc/GMT+3';
+show timezone;
+select now();
+
+set timezone to 'Etc/GMT-9';
+show timezone;
+select now();
+
+set timezone to 'Etc/GMT-0';
+show timezone;
+select now();
+
+set timezone to 'Etc/GMT-7';
+show timezone;
+select now();
+
+set timezone to 'Etc/GMT+2';
+show timezone;
+select now();
+
+set timezone to 'Etc/GMT+5';
+show timezone;
+select now();
+
+set timezone to 'Etc/GMT';
+show timezone;
+select now();
+
+set timezone to 'Etc/Zulu';
+show timezone;
+select now();
+
+set timezone to 'Etc/GMT+11';
+show timezone;
+select now();
+
+set timezone to 'Etc/GMT-13';
+show timezone;
+select now();
+
+set timezone to 'Etc/GMT-14';
+show timezone;
+select now();
+
+set timezone to 'Etc/GMT+10';
+show timezone;
+select now();
+
+set timezone to 'Etc/GMT-12';
+show timezone;
+select now();
+
+set timezone to 'Etc/GMT0';
+show timezone;
+select now();
+
+set timezone to 'Etc/UCT';
+show timezone;
+select now();
+
+set timezone to 'Etc/GMT+0';
+show timezone;
+select now();
+
+set timezone to 'Etc/GMT+7';
+show timezone;
+select now();
+
+set timezone to 'Etc/GMT+9';
+show timezone;
+select now();
+
+set timezone to 'Etc/GMT-2';
+show timezone;
+select now();
+
+set timezone to 'Etc/GMT-5';
+show timezone;
+select now();
+
+set timezone to 'Etc/GMT+8';
+show timezone;
+select now();
+
+set timezone to 'Etc/GMT+6';
+show timezone;
+select now();
+
+set timezone to 'Etc/GMT+1';
+show timezone;
+select now();
+
+set timezone to 'Etc/UTC';
+show timezone;
+select now();
+
+set timezone to 'Etc/GMT-4';
+show timezone;
+select now();
+
+set timezone to 'Etc/GMT-3';
+show timezone;
+select now();
+
+set timezone to 'NZ-CHAT';
+show timezone;
+select now();
+
+set timezone to 'Asia/Dushanbe';
+show timezone;
+select now();
+
+set timezone to 'Asia/Qostanay';
+show timezone;
+select now();
+
+set timezone to 'Asia/Calcutta';
+show timezone;
+select now();
+
+set timezone to 'Asia/Urumqi';
+show timezone;
+select now();
+
+set timezone to 'Asia/Karachi';
+show timezone;
+select now();
+
+set timezone to 'Asia/Khandyga';
+show timezone;
+select now();
+
+set timezone to 'Asia/Thimbu';
+show timezone;
+select now();
+
+set timezone to 'Asia/Thimphu';
+show timezone;
+select now();
+
+set timezone to 'Asia/Vladivostok';
+show timezone;
+select now();
+
+set timezone to 'Asia/Vientiane';
+show timezone;
+select now();
+
+set timezone to 'Asia/Shanghai';
+show timezone;
+select now();
+
+set timezone to 'Asia/Ulan_Bator';
+show timezone;
+select now();
+
+set timezone to 'Asia/Aden';
+show timezone;
+select now();
+
+set timezone to 'Asia/Muscat';
+show timezone;
+select now();
+
+set timezone to 'Asia/Damascus';
+show timezone;
+select now();
+
+set timezone to 'Asia/Jerusalem';
+show timezone;
+select now();
+
+set timezone to 'Asia/Brunei';
+show timezone;
+select now();
+
+set timezone to 'Asia/Ulaanbaatar';
+show timezone;
+select now();
+
+set timezone to 'Asia/Amman';
+show timezone;
+select now();
+
+set timezone to 'Asia/Kuching';
+show timezone;
+select now();
+
+set timezone to 'Asia/Tel_Aviv';
+show timezone;
+select now();
+
+set timezone to 'Asia/Seoul';
+show timezone;
+select now();
+
+set timezone to 'Asia/Atyrau';
+show timezone;
+select now();
+
+set timezone to 'Asia/Pyongyang';
+show timezone;
+select now();
+
+set timezone to 'Asia/Hovd';
+show timezone;
+select now();
+
+set timezone to 'Asia/Hebron';
+show timezone;
+select now();
+
+set timezone to 'Asia/Kuwait';
+show timezone;
+select now();
+
+set timezone to 'Asia/Tomsk';
+show timezone;
+select now();
+
+set timezone to 'Asia/Manila';
+show timezone;
+select now();
+
+set timezone to 'Asia/Chita';
+show timezone;
+select now();
+
+set timezone to 'Asia/Katmandu';
+show timezone;
+select now();
+
+set timezone to 'Asia/Gaza';
+show timezone;
+select now();
+
+set timezone to 'Asia/Samarkand';
+show timezone;
+select now();
+
+set timezone to 'Asia/Taipei';
+show timezone;
+select now();
+
+set timezone to 'Asia/Tashkent';
+show timezone;
+select now();
+
+set timezone to 'Asia/Yekaterinburg';
+show timezone;
+select now();
+
+set timezone to 'Asia/Macau';
+show timezone;
+select now();
+
+set timezone to 'Asia/Qyzylorda';
+show timezone;
+select now();
+
+set timezone to 'Asia/Macao';
+show timezone;
+select now();
+
+set timezone to 'Asia/Tokyo';
+show timezone;
+select now();
+
+set timezone to 'Asia/Baku';
+show timezone;
+select now();
+
+set timezone to 'Asia/Barnaul';
+show timezone;
+select now();
+
+set timezone to 'Asia/Istanbul';
+show timezone;
+select now();
+
+set timezone to 'Asia/Irkutsk';
+show timezone;
+select now();
+
+set timezone to 'Asia/Qatar';
+show timezone;
+select now();
+
+set timezone to 'Asia/Bahrain';
+show timezone;
+select now();
+
+set timezone to 'Asia/Yangon';
+show timezone;
+select now();
+
+set timezone to 'Asia/Yerevan';
+show timezone;
+select now();
+
+set timezone to 'Asia/Almaty';
+show timezone;
+select now();
+
+set timezone to 'Asia/Dili';
+show timezone;
+select now();
+
+set timezone to 'Asia/Dacca';
+show timezone;
+select now();
+
+set timezone to 'Asia/Chongqing';
+show timezone;
+select now();
+
+set timezone to 'Asia/Ust-Nera';
+show timezone;
+select now();
+
+set timezone to 'Asia/Magadan';
+show timezone;
+select now();
+
+set timezone to 'Asia/Colombo';
+show timezone;
+select now();
+
+set timezone to 'Asia/Krasnoyarsk';
+show timezone;
+select now();
+
+set timezone to 'Asia/Kamchatka';
+show timezone;
+select now();
+
+set timezone to 'Asia/Ujung_Pandang';
+show timezone;
+select now();
+
+set timezone to 'Asia/Jakarta';
+show timezone;
+select now();
+
+set timezone to 'Asia/Kolkata';
+show timezone;
+select now();
+
+set timezone to 'Asia/Kabul';
+show timezone;
+select now();
+
+set timezone to 'Asia/Oral';
+show timezone;
+select now();
+
+set timezone to 'Asia/Jayapura';
+show timezone;
+select now();
+
+set timezone to 'Asia/Pontianak';
+show timezone;
+select now();
+
+set timezone to 'Asia/Makassar';
+show timezone;
+select now();
+
+set timezone to 'Asia/Tbilisi';
+show timezone;
+select now();
+
+set timezone to 'Asia/Singapore';
+show timezone;
+select now();
+
+set timezone to 'Asia/Harbin';
+show timezone;
+select now();
+
+set timezone to 'Asia/Kashgar';
+show timezone;
+select now();
+
+set timezone to 'Asia/Dhaka';
+show timezone;
+select now();
+
+set timezone to 'Asia/Yakutsk';
+show timezone;
+select now();
+
+set timezone to 'Asia/Kuala_Lumpur';
+show timezone;
+select now();
+
+set timezone to 'Asia/Tehran';
+show timezone;
+select now();
+
+set timezone to 'Asia/Beirut';
+show timezone;
+select now();
+
+set timezone to 'Asia/Aqtobe';
+show timezone;
+select now();
+
+set timezone to 'Asia/Anadyr';
+show timezone;
+select now();
+
+set timezone to 'Asia/Bishkek';
+show timezone;
+select now();
+
+set timezone to 'Asia/Dubai';
+show timezone;
+select now();
+
+set timezone to 'Asia/Riyadh';
+show timezone;
+select now();
+
+set timezone to 'Asia/Novokuznetsk';
+show timezone;
+select now();
+
+set timezone to 'Asia/Aqtau';
+show timezone;
+select now();
+
+set timezone to 'Asia/Omsk';
+show timezone;
+select now();
+
+set timezone to 'Asia/Ashkhabad';
+show timezone;
+select now();
+
+set timezone to 'Asia/Saigon';
+show timezone;
+select now();
+
+set timezone to 'Asia/Sakhalin';
+show timezone;
+select now();
+
+set timezone to 'Asia/Hong_Kong';
+show timezone;
+select now();
+
+set timezone to 'Asia/Phnom_Penh';
+show timezone;
+select now();
+
+set timezone to 'Asia/Nicosia';
+show timezone;
+select now();
+
+set timezone to 'Asia/Baghdad';
+show timezone;
+select now();
+
+set timezone to 'Asia/Srednekolymsk';
+show timezone;
+select now();
+
+set timezone to 'Asia/Ashgabat';
+show timezone;
+select now();
+
+set timezone to 'Asia/Kathmandu';
+show timezone;
+select now();
+
+set timezone to 'Asia/Choibalsan';
+show timezone;
+select now();
+
+set timezone to 'Asia/Bangkok';
+show timezone;
+select now();
+
+set timezone to 'Asia/Chungking';
+show timezone;
+select now();
+
+set timezone to 'Asia/Novosibirsk';
+show timezone;
+select now();
+
+set timezone to 'Asia/Famagusta';
+show timezone;
+select now();
+
+set timezone to 'Asia/Rangoon';
+show timezone;
+select now();
+
+set timezone to 'Asia/Ho_Chi_Minh';
+show timezone;
+select now();
+
+set timezone to 'MET';
+show timezone;
+select now();
+
+set timezone to 'Portugal';
+show timezone;
+select now();
+
+set timezone to 'Antarctica/Palmer';
+show timezone;
+select now();
+
+set timezone to 'Antarctica/Davis';
+show timezone;
+select now();
+
+set timezone to 'Antarctica/Rothera';
+show timezone;
+select now();
+
+set timezone to 'Antarctica/Vostok';
+show timezone;
+select now();
+
+set timezone to 'Antarctica/Syowa';
+show timezone;
+select now();
+
+set timezone to 'Antarctica/DumontDUrville';
+show timezone;
+select now();
+
+set timezone to 'Antarctica/McMurdo';
+show timezone;
+select now();
+
+set timezone to 'Antarctica/Macquarie';
+show timezone;
+select now();
+
+set timezone to 'Antarctica/South_Pole';
+show timezone;
+select now();
+
+set timezone to 'Antarctica/Troll';
+show timezone;
+select now();
+
+set timezone to 'Antarctica/Mawson';
+show timezone;
+select now();
+
+set timezone to 'Antarctica/Casey';
+show timezone;
+select now();
+
+set timezone to 'GMT-0';
+show timezone;
+select now();
+
+set timezone to 'CET';
+show timezone;
+select now();
+
+set timezone to 'Eire';
+show timezone;
+select now();
+
+set timezone to 'PST8PDT';
+show timezone;
+select now();
+
+set timezone to 'Jamaica';
+show timezone;
+select now();
+
+set timezone to 'GMT';
+show timezone;
+select now();
+
+set timezone to 'Zulu';
+show timezone;
+select now();
+
+set timezone to 'Japan';
+show timezone;
+select now();
+
+set timezone to 'ROC';
+show timezone;
+select now();
+
+set timezone to 'GB-Eire';
+show timezone;
+select now();
+
+set timezone to 'Europe/Zurich';
+show timezone;
+select now();
+
+set timezone to 'Europe/Paris';
+show timezone;
+select now();
+
+set timezone to 'Europe/Moscow';
+show timezone;
+select now();
+
+set timezone to 'Europe/Luxembourg';
+show timezone;
+select now();
+
+set timezone to 'Europe/Ljubljana';
+show timezone;
+select now();
+
+set timezone to 'Europe/Helsinki';
+show timezone;
+select now();
+
+set timezone to 'Europe/Minsk';
+show timezone;
+select now();
+
+set timezone to 'Europe/Skopje';
+show timezone;
+select now();
+
+set timezone to 'Europe/Dublin';
+show timezone;
+select now();
+
+set timezone to 'Europe/Jersey';
+show timezone;
+select now();
+
+set timezone to 'Europe/San_Marino';
+show timezone;
+select now();
+
+set timezone to 'Europe/Gibraltar';
+show timezone;
+select now();
+
+set timezone to 'Europe/Belgrade';
+show timezone;
+select now();
+
+set timezone to 'Europe/Guernsey';
+show timezone;
+select now();
+
+set timezone to 'Europe/Ulyanovsk';
+show timezone;
+select now();
+
+set timezone to 'Europe/Saratov';
+show timezone;
+select now();
+
+set timezone to 'Europe/Vaduz';
+show timezone;
+select now();
+
+set timezone to 'Europe/Istanbul';
+show timezone;
+select now();
+
+set timezone to 'Europe/Lisbon';
+show timezone;
+select now();
+
+set timezone to 'Europe/Uzhgorod';
+show timezone;
+select now();
+
+set timezone to 'Europe/Kirov';
+show timezone;
+select now();
+
+set timezone to 'Europe/Tirane';
+show timezone;
+select now();
+
+set timezone to 'Europe/Tiraspol';
+show timezone;
+select now();
+
+set timezone to 'Europe/Sarajevo';
+show timezone;
+select now();
+
+set timezone to 'Europe/Madrid';
+show timezone;
+select now();
+
+set timezone to 'Europe/Podgorica';
+show timezone;
+select now();
+
+set timezone to 'Europe/Busingen';
+show timezone;
+select now();
+
+set timezone to 'Europe/Vatican';
+show timezone;
+select now();
+
+set timezone to 'Europe/Belfast';
+show timezone;
+select now();
+
+set timezone to 'Europe/Bratislava';
+show timezone;
+select now();
+
+set timezone to 'Europe/Kiev';
+show timezone;
+select now();
+
+set timezone to 'Europe/Kaliningrad';
+show timezone;
+select now();
+
+set timezone to 'Europe/Zaporozhye';
+show timezone;
+select now();
+
+set timezone to 'Europe/Vienna';
+show timezone;
+select now();
+
+set timezone to 'Europe/Budapest';
+show timezone;
+select now();
+
+set timezone to 'Europe/Vilnius';
+show timezone;
+select now();
+
+set timezone to 'Europe/Monaco';
+show timezone;
+select now();
+
+set timezone to 'Europe/Oslo';
+show timezone;
+select now();
+
+set timezone to 'Europe/Astrakhan';
+show timezone;
+select now();
+
+set timezone to 'Europe/Simferopol';
+show timezone;
+select now();
+
+set timezone to 'Europe/Volgograd';
+show timezone;
+select now();
+
+set timezone to 'Europe/Isle_of_Man';
+show timezone;
+select now();
+
+set timezone to 'Europe/London';
+show timezone;
+select now();
+
+set timezone to 'Europe/Riga';
+show timezone;
+select now();
+
+set timezone to 'Europe/Andorra';
+show timezone;
+select now();
+
+set timezone to 'Europe/Prague';
+show timezone;
+select now();
+
+set timezone to 'Europe/Berlin';
+show timezone;
+select now();
+
+set timezone to 'Europe/Tallinn';
+show timezone;
+select now();
+
+set timezone to 'Europe/Rome';
+show timezone;
+select now();
+
+set timezone to 'Europe/Malta';
+show timezone;
+select now();
+
+set timezone to 'Europe/Zagreb';
+show timezone;
+select now();
+
+set timezone to 'Europe/Amsterdam';
+show timezone;
+select now();
+
+set timezone to 'Europe/Nicosia';
+show timezone;
+select now();
+
+set timezone to 'Europe/Bucharest';
+show timezone;
+select now();
+
+set timezone to 'Europe/Copenhagen';
+show timezone;
+select now();
+
+set timezone to 'Europe/Chisinau';
+show timezone;
+select now();
+
+set timezone to 'Europe/Mariehamn';
+show timezone;
+select now();
+
+set timezone to 'Europe/Sofia';
+show timezone;
+select now();
+
+set timezone to 'Europe/Athens';
+show timezone;
+select now();
+
+set timezone to 'Europe/Stockholm';
+show timezone;
+select now();
+
+set timezone to 'Europe/Samara';
+show timezone;
+select now();
+
+set timezone to 'Europe/Brussels';
+show timezone;
+select now();
+
+set timezone to 'Europe/Warsaw';
+show timezone;
+select now();
+
+set timezone to 'ROK';
+show timezone;
+select now();
+
+set timezone to 'Navajo';
+show timezone;
+select now();
+
+set timezone to 'Singapore';
+show timezone;
+select now();
+
+set timezone to 'GB';
+show timezone;
+select now();
+
+set timezone to 'Mexico/BajaNorte';
+show timezone;
+select now();
+
+set timezone to 'Mexico/General';
+show timezone;
+select now();
+
+set timezone to 'Mexico/BajaSur';
+show timezone;
+select now();
+
+set timezone to 'EST';
+show timezone;
+select now();
+
+set timezone to 'GMT0';
+show timezone;
+select now();
+
+set timezone to 'Hongkong';
+show timezone;
+select now();
+
+set timezone to 'PRC';
+show timezone;
+select now();
+
+set timezone to 'Iran';
+show timezone;
+select now();
+
+set timezone to 'MST7MDT';
+show timezone;
+select now();
+
+set timezone to 'WET';
+show timezone;
+select now();
+
+set timezone to 'W-SU';
+show timezone;
+select now();
+
+set timezone to 'UCT';
+show timezone;
+select now();
+
+set timezone to 'Cuba';
+show timezone;
+select now();
+
+set timezone to 'Egypt';
+show timezone;
+select now();
+
+set timezone to 'GMT+0';
+show timezone;
+select now();
+
+set timezone to 'EET';
+show timezone;
+select now();
+
+set timezone to 'Israel';
+show timezone;
+select now();
+
+set timezone to 'Africa/Sao_Tome';
+show timezone;
+select now();
+
+set timezone to 'Africa/Conakry';
+show timezone;
+select now();
+
+set timezone to 'Africa/Dakar';
+show timezone;
+select now();
+
+set timezone to 'Africa/Ndjamena';
+show timezone;
+select now();
+
+set timezone to 'Africa/Casablanca';
+show timezone;
+select now();
+
+set timezone to 'Africa/Lome';
+show timezone;
+select now();
+
+set timezone to 'Africa/Algiers';
+show timezone;
+select now();
+
+set timezone to 'Africa/Mogadishu';
+show timezone;
+select now();
+
+set timezone to 'Africa/Lagos';
+show timezone;
+select now();
+
+set timezone to 'Africa/Brazzaville';
+show timezone;
+select now();
+
+set timezone to 'Africa/Timbuktu';
+show timezone;
+select now();
+
+set timezone to 'Africa/Nouakchott';
+show timezone;
+select now();
+
+set timezone to 'Africa/Maseru';
+show timezone;
+select now();
+
+set timezone to 'Africa/Libreville';
+show timezone;
+select now();
+
+set timezone to 'Africa/Harare';
+show timezone;
+select now();
+
+set timezone to 'Africa/Malabo';
+show timezone;
+select now();
+
+set timezone to 'Africa/Bangui';
+show timezone;
+select now();
+
+set timezone to 'Africa/Nairobi';
+show timezone;
+select now();
+
+set timezone to 'Africa/Kinshasa';
+show timezone;
+select now();
+
+set timezone to 'Africa/Porto-Novo';
+show timezone;
+select now();
+
+set timezone to 'Africa/Cairo';
+show timezone;
+select now();
+
+set timezone to 'Africa/Douala';
+show timezone;
+select now();
+
+set timezone to 'Africa/Juba';
+show timezone;
+select now();
+
+set timezone to 'Africa/Gaborone';
+show timezone;
+select now();
+
+set timezone to 'Africa/Tunis';
+show timezone;
+select now();
+
+set timezone to 'Africa/Kampala';
+show timezone;
+select now();
+
+set timezone to 'Africa/Mbabane';
+show timezone;
+select now();
+
+set timezone to 'Africa/Addis_Ababa';
+show timezone;
+select now();
+
+set timezone to 'Africa/Maputo';
+show timezone;
+select now();
+
+set timezone to 'Africa/Bissau';
+show timezone;
+select now();
+
+set timezone to 'Africa/Blantyre';
+show timezone;
+select now();
+
+set timezone to 'Africa/Niamey';
+show timezone;
+select now();
+
+set timezone to 'Africa/Banjul';
+show timezone;
+select now();
+
+set timezone to 'Africa/Abidjan';
+show timezone;
+select now();
+
+set timezone to 'Africa/Asmara';
+show timezone;
+select now();
+
+set timezone to 'Africa/Bamako';
+show timezone;
+select now();
+
+set timezone to 'Africa/Ouagadougou';
+show timezone;
+select now();
+
+set timezone to 'Africa/Lusaka';
+show timezone;
+select now();
+
+set timezone to 'Africa/Luanda';
+show timezone;
+select now();
+
+set timezone to 'Africa/Asmera';
+show timezone;
+select now();
+
+set timezone to 'Africa/Lubumbashi';
+show timezone;
+select now();
+
+set timezone to 'Africa/Accra';
+show timezone;
+select now();
+
+set timezone to 'Africa/Khartoum';
+show timezone;
+select now();
+
+set timezone to 'Africa/Ceuta';
+show timezone;
+select now();
+
+set timezone to 'Africa/Bujumbura';
+show timezone;
+select now();
+
+set timezone to 'Africa/Windhoek';
+show timezone;
+select now();
+
+set timezone to 'Africa/El_Aaiun';
+show timezone;
+select now();
+
+set timezone to 'Africa/Tripoli';
+show timezone;
+select now();
+
+set timezone to 'Africa/Monrovia';
+show timezone;
+select now();
+
+set timezone to 'Africa/Dar_es_Salaam';
+show timezone;
+select now();
+
+set timezone to 'Africa/Johannesburg';
+show timezone;
+select now();
+
+set timezone to 'Africa/Kigali';
+show timezone;
+select now();
+
+set timezone to 'Africa/Djibouti';
+show timezone;
+select now();
+
+set timezone to 'Africa/Freetown';
+show timezone;
+select now();
+
+set timezone to 'Factory';
+show timezone;
+select now();
+
+set timezone to 'UTC';
+show timezone;
+select now();
+
+set timezone to 'Chile/EasterIsland';
+show timezone;
+select now();
+
+set timezone to 'Chile/Continental';
+show timezone;
+select now();
+
+set timezone to 'HST';
+show timezone;
+select now();
+
+set timezone to 'Canada/Atlantic';
+show timezone;
+select now();
+
+set timezone to 'Canada/Pacific';
+show timezone;
+select now();
+
+set timezone to 'Canada/Eastern';
+show timezone;
+select now();
+
+set timezone to 'Canada/Yukon';
+show timezone;
+select now();
+
+set timezone to 'Canada/Saskatchewan';
+show timezone;
+select now();
+
+set timezone to 'Canada/Newfoundland';
+show timezone;
+select now();
+
+set timezone to 'Canada/Central';
+show timezone;
+select now();
+
+set timezone to 'Canada/Mountain';
+show timezone;
+select now();
+
+set timezone to 'Iceland';
+show timezone;
+select now();
+
