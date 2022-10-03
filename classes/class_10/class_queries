@@ -1,0 +1,7 @@
+# Conds on array cols over vals
+# try changing ANY for ALL. Explain
+genres_array from (select regexp_split_to_array(genres, '\|') as genres_array from movies) as sbq1 where 'Horror' = ANY (genres_array) limit 10;
+
+# Cons on val cols over arrays
+# Why do we need two subqueries?
+select * from(select array_genres[1] as genre from (select genres, regexp_split_to_array(genres, '\|') as array_genres from movies) as sbq1) as sbq2  where genre in ('Horror', 'Comedy', 'Drama') limit 100;
