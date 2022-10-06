@@ -23,12 +23,7 @@ Table: Catalog
 
 | bookshelf_id  | title | url |
 | ------------- | ------------- | ------------- | 
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-
-| bookshelf_id | bookshelf_title  | bookshelf_url| |
-| ------------ | ---------------- |  -------------- |
-|      1       |    example_title |  https://www.gutenberg.org/ebooks/bookshelf/210 |
+| 1  | title  |  https://www.gutenberg.org/ebooks/bookshelf/210 |
 
 
 *HINT*:
