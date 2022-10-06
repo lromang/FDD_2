@@ -14,17 +14,17 @@ Generate a bash script that performs the following tasks:
 The table must have the following variables:
 
 - bookshelf_id: primary key
-- bookshelf_title: varchar
-- bookshelf_url: varchar
+- title: varchar
+- url: varchar
 
 Example
 
 Table: Catalog
 
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |s
+| bookshelf_id  | title | url |
+| ------------- | ------------- | ------------- | 
+| Content Cell  | Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  | Content Cell  |
 
 | bookshelf_id | bookshelf_title  | bookshelf_url| |
 | ------------ | ---------------- |  -------------- |
