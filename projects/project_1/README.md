@@ -22,7 +22,7 @@ Example
 Table: Catalog
 
 | bookshelf_id | bookshelf_title  | bookshelf_url| |
-  ------------   ----------------   -------------- 
+| ------------ | ---------------- |  -------------- |
 |      1       |    example_title |  https://www.gutenberg.org/ebooks/bookshelf/210 |
 
 
