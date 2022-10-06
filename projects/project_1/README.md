@@ -23,7 +23,9 @@ Table: Catalog
 
 | bookshelf_id  | title | url |
 | ------------- | ------------- | ------------- | 
-| 1  | title  |  https://www.gutenberg.org/ebooks/bookshelf/210 |
+| 1  | title_1  |  https://www.gutenberg.org/ebooks/bookshelf/210 |
+| 2  | title_2  |  https://www.gutenberg.org/ebooks/bookshelf/296 |
+| ...  | ...  | ... |
 
 
 *HINT*:
