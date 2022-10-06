@@ -13,9 +13,9 @@ Create a bash script that performs the following tasks:
 * Generate a catalog of bookshelves from [this site](https://www.gutenberg.org/ebooks/bookshelf/) 
 The table must have the following variables:
 
-- bookshelf_id: primary key
-- title: varchar
-- url: varchar
+    - bookshelf_id: primary key
+    - title: varchar
+    - url: varchar
 
 Example
 
@@ -37,12 +37,12 @@ The following script might be useful, but you should be able to explain what it'
 * Sample N bookshelves, where N is a parameter selected by the user in the interval [1, number_of_bookshelfs] (any number out of that intervale should be flagged as an error),
 and load the books of each bookshelve in the sample to a book table. The table must have the following variables:
 
-- book_id: primary key
-- bookshelf_id: integer references (bookshelf_id)
-- title: varchar
-- author: varchar
-- url: varchar
-- downloads: integer
+    - book_id: primary key
+    - bookshelf_id: integer references (bookshelf_id)
+    - title: varchar
+    - author: varchar
+    - url: varchar
+    - downloads: integer
 
 Example
 
@@ -59,4 +59,4 @@ Table: Catalog
 
 The following script might be useful, but you should be able to explain what it's doing in class. Feel free to use your own if you have a better version
 
-curl https://www.gutenberg.org/ebooks/bookshelf/210 | gsed -nE '/.*cell content.*/,/^<\/span>$/p' | awk '/.*title.*/ {title=$0;getline;subtitle=$0;getline;print title ", " subtitle ", " $0 }'
+```curl https://www.gutenberg.org/ebooks/bookshelf/210 | gsed -nE '/.*cell content.*/,/^<\/span>$/p' | awk '/.*title.*/ {title=$0;getline;subtitle=$0;getline;print title ", " subtitle ", " $0 }'```
