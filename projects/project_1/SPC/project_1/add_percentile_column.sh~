@@ -1,0 +1,5 @@
+#! /bin/bash
+
+total_books=$((`psql -d fdd2db -c "select count(*) from books" | grep -Eo ' +[0-9]+'`))
+
+echo "create table if not exists books_with_percentile as (select book_id, bookshelf_id, url, author, title, downloads,cast((row_number() over (order by downloads asc)) as float)/cast(($total_books) as float) as percentile from books)" | psql -d fdd2db
