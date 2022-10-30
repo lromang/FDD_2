@@ -29,6 +29,6 @@ fi
 
 total_books=$((`psql -d fdd2db -c "select count(*) from books" | grep -Eo ' +[0-9]+'`))
 
-echo "drop table if exists books_with_percentile; create table books_with_percentile as (select book_id, bookshelf_id, url, author, title, downloads,cast((row_number() over (order by downloads asc)) as float)/cast(($total_books) as float) as percentile from books)" | psql -d fdd2db
+echo "drop table if exists books_with_percentile; create table books_with_percentile as (select book_id, bookshelf_id, url, author, title, downloads,cast((row_number() over (order by downloads desc)) as float)/cast(($total_books) as float) as percentile from books)" | psql -d fdd2db
 
 psql -d fdd2db -c '\copy books_with_percentile to "books_with_percentile.csv" header csv'

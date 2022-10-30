@@ -17,17 +17,24 @@ carts_avg=carts_avg[["cart_id","book_idl","purchase_date","percentile"]]
 carts_avg['expo'] = carts_avg['percentile']
 
 
-carts_avg['expo']=carts_avg['expo'].apply(lambda x: np.mean(np.random.exponential(1/((x+.001)*10**(1+x)),size=10)))
+carts_avg['expo']=carts_avg['expo'].apply(lambda x: np.mean(np.random.exponential((x+.001)*10**(1+x),size=100)))
 
 #multiply times 100 to get day estimate
-carts_avg['days_until_return'] = (carts_avg['expo']*100)
+carts_avg['estimated_days_until_return'] = (carts_avg['expo']*10)
 
-print(carts_avg['percentile'].corr(carts_avg['days_until_return']))
+#unix timestamp play
+carts_avg['estimated_return_date'] = carts_avg['purchase_date']+(carts_avg['estimated_days_until_return']*36400)
+
+#get estimated return date
+carts_avg['estimated_return_date']=pd.to_datetime(carts_avg['estimated_return_date'],unit='s')
+
+print(carts_avg['percentile'].corr(carts_avg['estimated_days_until_return']))
 print(carts_avg.describe())
 
+print(carts_avg.head(10))
 
-fig= plt.scatter(carts_avg['percentile'], carts_avg['days_until_return'])
-plt.xlabel("percentile")
-plt.ylabel("estimated_days_until_return")
+fig= plt.scatter(carts_avg['estimated_days_until_return'], carts_avg['percentile'])
+plt.ylabel("percentile")
+plt.xlabel("estimated_days_until_return")
 
 plt.savefig('percentiles_vs_return_date.png')
