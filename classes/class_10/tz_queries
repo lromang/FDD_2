@@ -1,0 +1,20 @@
+set timezone to 'Indian/Mauritius';
+show timezone;
+select now();
+
+set timezone to 'Indian/Chagos';
+show timezone;
+select now();
+
+set timezone to 'Indian/Mayotte';
+show timezone;
+select now();
+
+set timezone to 'Indian/Christmas';
+show timezone;
+select now();
+
+set timezone to 'Indian/Cocos';
+show timezone;
+select now();
+

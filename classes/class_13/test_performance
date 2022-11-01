@@ -1,0 +1,43 @@
+#! /Users/luisroman/miniconda3/envs/fdd2/bin/python
+
+import time
+import numpy as np
+from argparse import ArgumentParser
+
+if __name__ == '__main__':
+   # Instance parser
+   args = ArgumentParser()
+   # Add argument
+   args.add_argument('--size', type=int, help='sample size')
+   # Get arguemnts
+   parser = args.parse_args()
+   # Get parameter
+   size = parser.size
+   
+   # Create list
+   the_list = range(size)
+   new_list = []
+   # Print before addition
+   print('Regular for')
+   t0 = time.time()
+   for i, e in  enumerate(the_list):
+       new_list.append(e + 1)
+   total_time = time.time() - t0
+   print(new_list[:10])
+   print(f'total time regular for: {total_time}')
+   print('List comprehension')
+   t0 = time.time()
+   new_list = [i + 1 for i in the_list]
+   total_time = time.time() - t0
+   print(f'total time regular for: {total_time}')
+   print(new_list[:10])
+   print('Numpy')
+   the_list = np.array(the_list)
+   t0 = time.time()
+   new_list = the_list + 1 
+   total_time = time.time() - t0
+   print(new_list[:10])
+   print(f'total time regular for: {total_time}')
+      
+
+   

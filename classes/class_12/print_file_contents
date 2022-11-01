@@ -1,0 +1,20 @@
+#! /Users/luisroman/miniconda3/bin/python
+
+from argparse import ArgumentParser
+
+
+if __name__ == '__main__':
+   arg_pars = ArgumentParser()
+   # Define argument
+   arg_pars.add_argument('-f', '--file', type=str)
+   # Instantiate parser
+   parser = arg_pars.parse_args()
+   # Get file
+   file_name = parser.file
+   print('OPENING FILE: ', file_name)
+   # Open file
+   with open(file_name) as f:
+   	lines = f.read().split('\n')
+   print('Printing file contents')
+   for line in lines:
+       print(line.upper())
