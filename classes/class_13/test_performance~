@@ -1,0 +1,19 @@
+#! /Users/luisroman/miniconda3/bin/python
+
+
+import time
+import numpy as np
+from argparse import ArgumentParser
+
+if __name__ == '__main__':
+   # Instance parser
+   args = ArgumentParser()
+   # Add argument
+   args.add_argument('--size', type=int, help='sample size')
+   # Get arguemnts
+   parser = args.parse_args()
+   # Get parameter
+   size = parser.size
+   # Print to console
+   print(size)
+
