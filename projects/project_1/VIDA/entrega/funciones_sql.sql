@@ -32,7 +32,7 @@ language plpgsql
 as $$
 	declare cuenta int ;
 begin 
-	select count(*)/2 into cuenta from cart;
+	select count(*) into cuenta from cart;
 	update books  set percentil=rs.percentil from   (
 	select id_book  , ntile (10) over (order  by b.downloads desc) as percentil from books b
 	)   as rs where books.id_book=rs.id_book;
