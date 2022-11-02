@@ -1,0 +1,4 @@
+- run file create_bookshelf_table.sh
+- run file create_books.sh
+- run file create_carts.sh
+- run file exp_analysis.py (the file needs connection to the path where you have your conda environment)

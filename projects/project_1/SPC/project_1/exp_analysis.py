@@ -14,6 +14,8 @@ carts_avg=carts.join(carts_avg, on='cart_id', lsuffix='l')
 
 carts_avg=carts_avg[["cart_id","book_idl","purchase_date","percentile"]]
 
+carts_avg=carts_avg.groupby("book_idl").mean()
+
 carts_avg['expo'] = carts_avg['percentile']
 
 
@@ -28,10 +30,17 @@ carts_avg['estimated_return_date'] = carts_avg['purchase_date']+(carts_avg['esti
 #get estimated return date
 carts_avg['estimated_return_date']=pd.to_datetime(carts_avg['estimated_return_date'],unit='s')
 
-print(carts_avg['percentile'].corr(carts_avg['estimated_days_until_return']))
-print(carts_avg.describe())
+carts = carts.rename(columns={'book_id': 'book_idl'})
 
-print(carts_avg.head(10))
+carts = carts.groupby("book_idl").mean()
+
+carts_avg=carts.join(carts_avg, on='book_idl', lsuffix='_l')
+
+print(carts_avg.describe())
+print(carts_avg['percentile_l'].corr(carts_avg['estimated_days_until_return']))
+
+
+#print(carts_avg.head(10))
 
 fig= plt.scatter(carts_avg['estimated_days_until_return'], carts_avg['percentile'])
 plt.ylabel("percentile")
