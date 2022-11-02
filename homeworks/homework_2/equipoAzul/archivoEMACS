@@ -4,7 +4,6 @@ echo 'Escribe un stream de texto (números o letras)'
 read  stream
 
 echo $stream | awk '/.*[a-zA-Z].*/ {
-
      if (!(NF % 2)) {
      	word_length=0; for(i=1; i<=NF; i++) word_length+=length($i); print "Promedio de caracteres de cada palabra en la linea: " word_length/NF;}
 	else
