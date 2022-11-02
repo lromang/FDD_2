@@ -1,0 +1,153 @@
+#! /bin/bash
+
+# PARAMS
+database=${1:-fdd2db}
+user=${2:-$(whoami)}
+N=${3:-10}
+M=${4:-1000}
+pass=${5:-memo}
+port=${6:-6666}
+# para hacerlo general: service postgresql status | sed -e 's/.*port //' -e 's/).*//'
+
+#GLOBAL
+echo "Working with database: $database | user: $user"
+
+tables=('carts_books', 'bookalog', 'catalog', 'carts', 'u_table')
+views=('result')
+
+#Drop views
+for view in ${views[@]}
+do
+    echo "Dropping views $view"
+    psql -d $database -U $user -c "drop view if exists $view cascade"
+done
+
+# Drop tables
+ # Just iterating over an array
+ # do not worry about this.
+for table in ${tables[@]}
+ do
+	echo "Dropping table $table"
+
+     	psql -d $database -U $user -c "drop table if exists $table cascade"
+done
+
+
+
+# ----------------------------------------
+ # Create tables
+ # ----------------------------------------
+echo "Creating table bookshelfs"
+psql -d $database -c "create table if not exists catalog(bookshelf_id serial primary key, title varchar(100), url varchar(200))"
+
+#----------------------------------------
+# Populate tables
+# ----------------------------------------
+# -> populate catalog
+echo "Populating table catalog"
+#curl https://www.gutenberg.org/ebooks/bookshelf/
+cat books.txt | grep '"/ebooks/bookshelf/[0-9]' | awk -F '"' '{print "https://www.gutenberg.org"$2";",$4}'| sed -E "s/'/''/g" | awk 'BEGIN { FS = "; " } {print "insert into catalog (title, url) values (\x27"$2"\x27, \x27"$1"\x27);"}'> prueba.txt
+psql -d $database -f prueba.txt
+
+max_N=$(psql -tA $database -c "select count(*) from catalog")
+
+echo $N
+
+if [[ $N -le $max_N ]] && [[ $N -ge 1 ]] && [[ $M -le 10000 ]] && [[ $M -ge 1 ]]
+then
+   echo "Generating a sample of $N elements"
+   tot_urls=($(psql -tA $database -c "select url from catalog order by RANDOM() limit $N"))
+   echo "Creating table books"
+   psql -d $database -c "create table if not exists bookalog(book_id serial primary key, bookshelf_id integer references catalog(bookshelf_id), title varchar(500), author varchar(300),  url varchar(300), downloads integer)"
+   for i in ${tot_urls[@]}
+   do
+       echo $i
+       shelf=$(psql -tA $database -c "select bookshelf_id from catalog where url='$i'")
+       echo $shelf
+       curl $i | sed -nE '/.*<li class="booklink".*/,/^<span class="extra">.*$/p'| grep -e 'href' -e 'title' -e 'extra'| sed 's/^.*class=//'| sed 's/<.*/º/' | sed 's/^.*href="//' | sed 's/" accesskey.*/º/'| sed 's/^.*>//' | sed 's/ downl.*/|/' |tr '\n' ' ' | tr '|' '\n' | sed 's/^ //'| sed s/"'"/´/g | awk -Fº '{if ( NF-1==3){print "https://www.gutenberg.org",$1,"º",$2,"º",$3,"º",$4;}else if(NF-1>0){print "https://www.gutenberg.org",$1,"º",$2,"º","SAº",$3}}'| sed 's/ º /º/' | sed 's/.org /.org/' | awk -v awkvar="$shelf" 'BEGIN { FS = "º"} {print "insert into bookalog(bookshelf_id,title,author,url,downloads) values ("awkvar", \x27"$2"\x27,\x27"$3"\x27,\x27"$1"\x27,\x27"$4"\x27);"}'> prueba4.txt
+       psql -d $database -f prueba4.txt       
+   done
+   
+   psql -d $database -c "create or replace view result as (select *, NTILE(100) over(order by downloads) as percentile from bookalog)"
+   #Create table users
+   echo "Creating table users"
+   psql -d $database -c "create table if not exists u_table(user_id serial primary key, name varchar(200))"
+   
+   #Create table carts
+   echo "Creating table carts"
+   psql -d $database -c "create table if not exists carts(cart_id serial primary key, user_id integer references u_table(user_id), purchase_date date)"
+   echo "Creating table n-m carts_books"
+   psql -d $database -c "create table if not exists carts_books(cart_id integer references carts(cart_id), book_id integer references bookalog(book_id), constraint pk_cart_book primary key (cart_id, book_id))"
+
+   #Populate table users, carts, carts_books
+   for i in $(seq $M)
+   do
+       rand=$(((RANDOM % 10) + 5))
+       valor=$(cat /dev/urandom | tr -dc '[:alpha:]' | fold -w $rand | head -n 1)
+       query="insert into u_table (name) values ('$valor');"
+       echo "Insert user"
+       psql -d $database -c "$query"
+
+       #Generar fecha aleatoria entre 2020-01-01 y hoy (aaaa-mm-dd)
+       echo $i
+       now=$(date +'%Y-%m-%d')
+       fecha=$(shuf -n1 -i$(date -d '2020-01-01' '+%s')-$(date -d $now '+%s') | xargs -I{} date -d '@{}' '+%Y-%m-%d')
+       echo "Insert carts"
+       psql -d $database -c "insert into carts(user_id, purchase_date) values ($i, '$fecha')"
+       k=$(( ( RANDOM % 10 ) + 1 ))
+       sample_books=($(psql -tA $database -c "select book_id from bookalog order by RANDOM() limit $k"))
+       echo "Insert carts_books"
+       for book in ${sample_books[@]}
+       do
+	   psql -d $database -c "insert into carts_books(cart_id, book_id) values ($i, $book)"
+       done       
+   done
+   ipython -c "import pandas as pd
+import datetime
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas.io.sql as sqlio
+import psycopg2
+conn = psycopg2.connect(host='localhost', port='$port', database='$database', user='$user', password='$pass')
+query = 'select book_id, cart_id, user_id, purchase_date, percentile from carts join carts_books using(cart_id) join result using(book_id)'
+base = sqlio.read_sql_query(query, conn)
+base['purchase_date']=pd.to_datetime(base['purchase_date'])
+base['percentile']=base.apply(lambda x: (100-x['percentile'])/100, axis=1)
+base =base.merge(base.groupby('cart_id')['percentile'].mean().reset_index(drop=False),how='left', on='cart_id')
+base['delta'] = base.apply(lambda x: np.random.exponential((x['percentile_y'])*10**(1+x['percentile_y']),1)[0],axis=1)
+base['purchase_date_2']=base.apply(lambda x: x['purchase_date']+datetime.timedelta(days=x['delta']),axis=1)
+base['diff_days']=base.apply(lambda x: (x['purchase_date_2']-x['purchase_date']).days,axis=1)
+nuevas_fechas=base[['book_id','cart_id','user_id','purchase_date_2']].rename({'purchase_date_2':'purchase_date'},axis=1)
+base_nueva = pd.concat([base[['book_id','cart_id','user_id','purchase_date']],nuevas_fechas],ignore_index=True)
+aux=base[['percentile_y','diff_days']]
+aux=aux.merge(aux.groupby('percentile_y')['diff_days'].mean().reset_index(), how='left',on='percentile_y')
+fig, ax = plt.subplots(figsize = (7, 7))
+ax.scatter(aux['percentile_y'], aux['diff_days_y'], s=60, alpha=0.7, edgecolors='k')
+b, a = np.polyfit(aux['percentile_y'], aux['diff_days_y'], deg=1)
+xseq = np.linspace(0, 1, num=10)
+ax.plot(xseq, a + b * xseq, color='k', lw=2.5)
+plt.title('Correlacion entre percentile x  recurrencia de compra')
+plt.xlabel('Percentile')
+plt.ylabel('Diferencia de dias entre compras')
+plt.show()
+fig.savefig('./scatter_proyecto_fdd_por_cart.png')"
+   
+else
+   echo "ERROR"
+   echo "Selected N is out of bounds"
+fi
+
+
+
+#opcion anterior:
+# dentro de for, despues echo $i: #cat bookshelf_303.txt | sed -nE -e '/.*href="\/ebooks\/[0-9]+".*/,/.*"cell.*/p' -e '/.*<img class="cover-thumb".*/,/^<span class="extra">.*$/p' | sed -e 's/^<span class=//g' -e 's/<\/span>//g' -e 's/"cell.*//g' -e 's/.*class=//g' -e 's/ downloads//g' -e '/^$/d' -e '/^"cov.*/d' -e 's/" access.*//g' -e 's/".*">//g' -e 's/"link.*="//g
+
+    
+#------ -> PUREBAS INDIVIDUALES populate books
+#echo "Populating table books"
+#curl https://www.gutenberg.org/ebooks/bookshelf/37 | sed -nE '/.*<li class="booklink".*/,/^<span class="extra">.*$/p'| grep -e 'href' -e 'title' -e 'extra'| sed 's/^.*class=//'| sed 's/<.*/º/' | sed 's/^.*href="//' | sed 's/" accesskey.*/º/'| sed 's/^.*>//' | sed 's/ downl.*/|/' |tr '\n' ' ' | tr '|' '\n' | sed 's/^ //' | awk -Fº '{if ( NF-1==3){print "https://www.gutenberg.org",$1,"º",$2,"º",$3,"º",$4;}else if(NF-1>0){print "https://www.gutenberg.org",$1,"º",$2,"º","SAº",$3}}'| sed 's/ º /º/' | sed 's/.org /.org/' | awk 'BEGIN { FS = "º" } {print "insert into bookalog(bookshelf_id,title,author,url,downloads) values (\x27"1"\x27, \x27"$2"\x27,\x27"$3"\x27,\x27"$1"\x27,\x27"$4"\x27);"}'> prueba4.txt
+#psql -d $database -f prueba4.txt
+
+#psql -tA $database -c "select * from bookalog"
+#psql -d $database -c "select * from bookalog"
+#psql -d $database -c "select * from catalog"
