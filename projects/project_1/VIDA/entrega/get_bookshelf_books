@@ -1,0 +1,6 @@
+#! /bin/bash
+
+bookshelf_url=$1
+num=$(echo $bookshelf_url | sed -E 's/.*\/(.*)/\1/')
+curl https://www.gutenberg.org$bookshelf_url | awk '{ if ($0 ~ /\<li class=\"booklink\"\>/) { getline;printf $0;n=NR+5; while (NR<n){ getline }; {if ( $0 ~ /^\<\/span\>/) { getline; getline; }} ;n=NR+3; while (NR<n){ if (!( $0 ~ /^\<\/span\>/)) { printf "&&##"$0 }  getline }; print "" } }'  | sed -E "s/.*href=\"([^\"]*)\"[^\>]*>(.*)/\"\"\1\"\"\2/" | sed -E 's/([^&]*)&&##[^\>]*>([^\<]*)<\/span>/\1,,\"\"\2\"\"/g' | sed -E 's/(.*) download.*\"\"/\1\"\"/' | sed -E "s/([^']*)'([^']*)/\1''\2/g" | sed -E "s/([^\"]*)(\")?\"\"([^\"]*)/\1\2'\3/g"| awk -v n=$num  -F  ',,' '{ if (NF == 4) { print "insert into books (bookshelf_id,link,title,author,downloads) values ("n",,"$0");"} else { print "insert into books (bookshelf_id,link,title,downloads) values ("n",,"$0");"} }' | sed -E 's/([^,]*),,([^,]*)/\1,\2/g' | tr -d '\r' | xargs -d '\n' -n 1  -I {} psql -d fdd2db -q -c "{}" 
+ 
