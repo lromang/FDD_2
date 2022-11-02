@@ -1,0 +1,15 @@
+#! /bin/bash
+
+if [[ ! -f students_random.csv ]]
+then
+
+for i in $(seq 10000); do letters=$(for letter in {a..z}; do echo $letter; done | tr '\n' ' ');
+ query=$(echo $i | awk -v letters="$letters" -v v_index="$i" "BEGIN{srand(v_index)}; {split(letters, list_letters); for(i=0; i < 5 + (rand()*100 % 5); i++)
+ r_word=r_word list_letters[int(rand()*length(list_letters)) + 1];
+ printf(\"%d %s %d %d\",int(v_index),r_word,int(rand() * 18 + 18),
+int(rand() * 19 + 1) )}"); echo $query; done > students_random.csv
+
+fi
+
+echo "Populating table students"
+psql -d fdd2db -c "\copy students from 'students_random.csv' delimiter ' '"
