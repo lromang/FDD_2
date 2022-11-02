@@ -76,7 +76,7 @@ psql -d fdd2db -c "create table purchase_carts(cart_id integer, user_id integer,
 
 for i in $(seq $num_user)
 do
-rand_num_books=$(( $RANDOM%10 + 1 ))
+rand_num_books=$(( $RANDOM%5 + 1 ))
 echo $rand_num_books
 rand_date=$(shuf -n1 -i$(date -d '2020-01-01' '+%s')-$(date -d $now '+%s') | xargs -I{} date -d '@{}' '+%Y/%m/%d')
 for book in $(seq $rand_num_books)
