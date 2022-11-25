@@ -8,9 +8,20 @@ import seaborn as sns
 class Logit:
       '''
       This class is a logit classifier
+
+      X in [m, n+1]
+       n: variables
+       m: observations
+
+      y in [m, 1]
+
+      theta in [1, n+1]
+
+      np.dot(X, theta.T)
+      
       ''' 
       def __init__(self, X, y, alpha=.005):
-            self.X = np.hstack([np.ones(X.shape[0]).reshape(-1, 1), X])
+            self.X = self.add_ordinate(X)
             self.y = y
             self.theta = np.random.rand(X.shape[1]+1).reshape(1, -1)
             self.alpha = alpha # This is the learning rate
@@ -19,12 +30,17 @@ class Logit:
             print(f'Loading data: y shape [{self.y.shape}]')
             print(f'params shape: theta [{self.theta.shape}]')
 
+      def add_ordinate(self, X):
+            return np.hstack([np.ones(X.shape[0]).reshape(-1, 1), X])
+      
+            
       def forward(self, X=None):
             '''
             This function implements:
             the logit pass to X. 1/(1 + e-z*theta)
             '''
-            X = X if not X is None else self.X
+            X = self.add_ordinate(X) if not X is None else self.X
+            print(X.shape)
             return 1/(1 + np.exp(-np.dot(X, self.theta.T)))
 
       def loss(self):
