@@ -1,0 +1,14 @@
+#! /bin/bash
+
+#aqui creamos la vista que tiene los ratings con fecha y el primer genero de la pelicula
+psql -d fdd2db -c 'create view milista as select user_id, date, (select array_genres[1] as genre from (select  regexp_split_to_array(movies.genres, '\|') as array_genres) as dos where ratings.movie_id=movies.movie_id )from ratings,movies where ratings.movie_id=movies.movie_id order by 1,3,2'
+
+#aqui creamos la vista que ya tiene los tiempos entre ratings por pelicula y por usuario
+psql -d fdd2db -c 'Create view milista2 as select user_id, genre,(date-previous_rate)::interval as tiempo 
+from (select user_id, genre,row_number() over (partition by user_id,genre order by date asc) row_num, date, lag(date) over (partition by user_id,genre order by user_id,genre,date asc) as previous_rate from milista) as sbq1 where previous_rate is not null'
+
+#el query que usamos para el numero de usuarios con mas de un decil (los bots en si)
+psql -d fdd2db -c 'select count(user_id) from (select user_id, count(*) from (select * from (select user_id, genre, avg(tiempo), ntile(10) over (partition by genre order by avg(tiempo)) as decil from milista2 group by user_id, genre)as original where original.decil=1) as primeros_deciles group by user_id having count(*)>1) as mas_de_un_decil'
+
+#el query que usamos para la grafica, el numero de usuarios segun aumenta el numero de primeros deciles en los que se encuentra
+psql -d fdd2db -c 'select user_id, count(*) from (select * from (select user_id, genre, avg(tiempo), ntile(10) over (partition by genre order by avg(tiempo)) as decil from milista2 group by user_id, genre)as original where original.decil=1) as primeros_deciles group by user_id having count(*)>1'
