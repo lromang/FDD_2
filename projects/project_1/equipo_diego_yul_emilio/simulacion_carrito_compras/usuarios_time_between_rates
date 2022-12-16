@@ -1,0 +1,27 @@
+#! /bin/bash
+
+percentile=${1:-0.2}
+
+psql -d fdd2db -c "create table if not exists avg_time_user_genre as (select user_id, genre, avg(time_between_rates) as avg from
+(select user_id, unnest(array_genres) as genre, time_between_rates from
+(select user_id, regexp_split_to_array(genres, '\|') as array_genres, (date-previous_rate)::interval as time_between_rates from
+(select movie_id,user_id,row_number() over (partition by user_id order by date asc) row_num, date, lag(date) over (partition by user_id order by date asc) previous_rate,genres,rating from
+ratings left join movies on movie_id = id) as sbq1 where previous_rate is not null) as sbq2) as sbq3 group by user_id, genre);" 
+
+psql -d fdd2db -c "create table if not exists genre_decile as (select genre, percentile_cont($percentile) within group (order by time_between_rates asc) as percentile_time_between_rates from (select unnest(array_genres) as genre, time_between_rates from
+(select user_id,(date-previous_rate)::interval as time_between_rates, regexp_split_to_array(genres, '\|') as array_genres from (select movie_id,user_id,row_number() over (partition by user_id order by date asc) row_num, date, lag(date) over (partition by user_id order by date asc) previous_rate,genres,rating from ratings left join movies on movie_id = id) as sbq1) as sbq2 where time_between_rates is not null) as sbq3 where genre != '(no genres listed)' group by genre);"
+
+psql -d fdd2db -c "create table if not exists users_2_more_decile as (select user_id, count from (select user_id, count(user_id) as count from 
+(select user_id, avg_time_user_genre.genre from avg_time_user_genre join genre_decile on avg_time_user_genre.genre = genre_decile.genre where avg <= percentile_time_between_rates) as sbq1 group by user_id) as sbq2 where count >= 2 order by count, user_id);"
+
+psql -d fdd2db -c "create table if not exists users_0_more_decile as (select user_id, count from (select user_id, count(user_id) as count from
+(select user_id, avg_time_user_genre.genre from avg_time_user_genre join genre_decile on avg_time_user_genre.genre = genre_decile.genre where avg <= percentile_time_between_rates) as sbq1 group by user_id) as sbq2 where count >= 0 order by count, user_id);"
+
+psql -d fdd2db -c "select * from users_2_more_decile"
+
+total=$(psql -d fdd2db -c "select count(distinct user_id) as total from ratings;" | awk '/^-+$/ {getline; print $0}' | awk '{print 1/$0}') 
+
+psql -d fdd2db -c "select count, count(count)*$total as percentage_of_counts from users_2_more_decile group by count order by count;"
+
+# Obtener el csv
+psql -d fdd2db -c "select count, count(count)*$total as percentage_of_counts from users_0_more_decile group by count order by count;" | awk -F '\|' '/^ +[0-9]+/{print $1 "," $2}'| sed -E "s/ //g" > percentages.csv
